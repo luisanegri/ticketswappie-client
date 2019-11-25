@@ -29,10 +29,10 @@ export const createEvent = (
     .catch(console.error);
 };
 
-function readEventsSuccess(event) {
+function readEventsSuccess(events) {
   return {
     type: READ_EVENT,
-    payload: event
+    payload: events
   };
 }
 
@@ -52,7 +52,7 @@ export const readEventSuccess = event => ({
 });
 
 export const readEvent = (id, event) => dispatch => {
-  console.log('loadEvent id and data', id, event);
+  console.log('loadEvent id', id);
   request
     .get(`${baseUrl}/event/${id}`)
     .send(event)

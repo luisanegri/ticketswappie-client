@@ -1,14 +1,24 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Row, Button } from 'react-bootstrap';
 
 export default function EventDetail(props) {
-  console.log(props);
+  console.log('event detail props', props);
   return (
     <div className="wrapper event-detail">
-      <Col>
-        {/* not displaying on page*/}
-        <span>{props.name}</span>
-      </Col>
+      <Row>
+        <Col>
+          <img src={props.events.end_date} />
+        </Col>
+        <Col className="col-right">
+          <div className=" hold-info">
+            <p>Event name: {props.events.name}</p>
+            <p>Description: {props.events.description}</p>
+            <p>Start date: {props.events.start_date}</p>
+            <p>End date: {props.events.image}</p>
+          </div>
+          <Button variant="primary">View Tickets</Button>
+        </Col>
+      </Row>
     </div>
   );
 }

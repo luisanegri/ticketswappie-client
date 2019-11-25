@@ -17,8 +17,8 @@ export class EventFormContainer extends Component {
     this.props.createEvent(
       this.state.name,
       this.state.description,
-      this.state.end_date,
       this.state.start_date,
+      this.state.end_date,
       this.state.image
     );
     this.setState({
@@ -48,10 +48,6 @@ export class EventFormContainer extends Component {
     );
   }
 }
-
-// const mapStateToProps = state => ({
-//   events: state.events
-// });
 
 const mapDispatchToProps = { createEvent };
 

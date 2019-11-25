@@ -15,7 +15,7 @@ body {
 }
 
 .container .wrapper {
-  margin-top: 50px;
+  margin: 50px 0;
 }
 
 .event-list a:hover {
@@ -53,4 +53,36 @@ body {
 .navigation .nav-link a:hover {
   color: #fafafa;
   text-decoration: none;
+}
+
+.event-detail img {
+  width: 100%;
+  min-height: 400px;
+  max-height: 400px;
+}
+
+.event-detail .col {
+  padding: 0;
+}
+
+.event-detail .col-right {
+  background: rgba(0, 107, 166, 0.09);
+}
+
+.wrapper button {
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  background: #6df0c2;
+  border-color: transparent;
+  padding: 8px 30px;
+  color: black;
+}
+
+.wrapper button:hover {
+  background: #3069f0;
+}
+
+.hold-info {
+  padding: 35px;
 }
