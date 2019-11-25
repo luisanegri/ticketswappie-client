@@ -9,7 +9,7 @@ export default function EventList(props) {
       <Row>
         {props.events.map(event => (
           <Col>
-            <Link to="/">
+            <Link to={`/event/${event.id}`}>
               <Card key={event.id}>
                 <Card.Body>
                   <Row>

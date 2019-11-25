@@ -23,7 +23,7 @@ export default function EventForm(props) {
             as="textarea"
             rows="3"
             type="text"
-            placeholder="Event name"
+            placeholder="Description"
             onChange={props.onChange}
             value={props.value.description}
             name="description"

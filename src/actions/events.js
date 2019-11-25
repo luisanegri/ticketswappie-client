@@ -1,5 +1,6 @@
 import request from 'superagent';
 export const CREATE_EVENT = 'CREATE_EVENT';
+export const READ_EVENTS = 'READ_EVENTS';
 export const READ_EVENT = 'READ_EVENT';
 
 const baseUrl = 'http://localhost:4000';
@@ -28,19 +29,36 @@ export const createEvent = (
     .catch(console.error);
 };
 
-function readEventSuccess(event) {
+function readEventsSuccess(event) {
   return {
     type: READ_EVENT,
     payload: event
   };
 }
 
-export const readEvent = () => dispatch => {
+export const readEvents = () => dispatch => {
   request
     .get(`${baseUrl}/event`)
     .then(response => {
-      const action = readEventSuccess(response.body);
+      const action = readEventsSuccess(response.body);
       dispatch(action);
+    })
+    .catch(console.error);
+};
+
+export const readEventSuccess = event => ({
+  type: READ_EVENT,
+  payload: event
+});
+
+export const readEvent = (id, event) => dispatch => {
+  console.log('loadEvent id and data', id, event);
+  request
+    .get(`${baseUrl}/event/${id}`)
+    .send(event)
+    .then(response => {
+      console.log('loadEvent response', response);
+      dispatch(readEventSuccess(response.body));
     })
     .catch(console.error);
 };
