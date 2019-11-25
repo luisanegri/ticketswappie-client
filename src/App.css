@@ -41,3 +41,16 @@ body {
   font-size: 25px;
   text-align: center;
 }
+
+.navigation .bg {
+  background-color: #3069f0;
+}
+
+.navigation .nav-link a {
+  color: #fafafa;
+}
+
+.navigation .nav-link a:hover {
+  color: #fafafa;
+  text-decoration: none;
+}
