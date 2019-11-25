@@ -13,3 +13,31 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.container .wrapper {
+  margin-top: 50px;
+}
+
+.event-list a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.event-list a {
+  color: black;
+}
+
+.event-list .card-body {
+  background: rgba(0, 107, 166, 0.09);
+}
+
+.event-list .card {
+  width: 65%;
+}
+
+.wrapper h1 {
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-size: 25px;
+  text-align: center;
+}
