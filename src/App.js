@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './App.css';
 import { Container } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import NavBar from './components/NavBar';
@@ -17,19 +17,30 @@ function App() {
     <Fragment>
       <NavBar />
       <Container>
-        <Route exact path="/" component={SignUp} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/event/create" component={EventFormContainer} />
-        <Route exact path="/event" component={EventListContainer} />
-        <Route exact path="/event/:id" component={EventDetailContainer} />
-        <Route
-          exact
-          path="/event/:eventId/ticket"
-          component={TicketListContainer}
-        />
-        {/* <Route exact path="" component={TicketDetailContainer} /> */}
-        {/* <Route exact path="/event/:id/ticket" component={TicketListContainer} /> */}
-        <Route exact path="/ticket/create" component={TicketFormContainer} />
+        <Switch>
+          <Route exact path="/" component={SignUp} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/event/create" component={EventFormContainer} />
+          <Route exact path="/event" component={EventListContainer} />
+          <Route exact path="/event/:id" component={EventDetailContainer} />
+          <Route
+            exact
+            path="/event/:eventId/ticket"
+            component={TicketListContainer}
+          />
+          <Route
+            exact
+            path="/event/:eventId/ticket/:ticketId"
+            component={TicketDetailContainer}
+          />
+          {/* <Route exact path="/event/:id/ticket" component={TicketListContainer} /> */}
+          {/* <Route
+            exact
+            path="/event/:eventId/ticket/create"
+            component={TicketFormContainer}
+          /> */}
+          <Route exact path="/ticket/create" component={TicketFormContainer} />
+        </Switch>
       </Container>
     </Fragment>
   );

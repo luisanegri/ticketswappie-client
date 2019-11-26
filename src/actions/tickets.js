@@ -19,12 +19,15 @@ export const createTicket = (
   eventId
 ) => dispatch => {
   console.log('id?????', eventId);
+  console.log('price', price);
+  console.log('description', description);
+  console.log('image', image);
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
-    .send({ price, description, image, eventId })
+    .send({ price, description, image })
     .then(response => {
       console.log(response);
-      const action = createTicketSuccess(response.text);
+      const action = createTicketSuccess(response.body);
       dispatch(action);
     })
     .catch(console.error);

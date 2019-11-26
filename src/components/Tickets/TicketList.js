@@ -10,7 +10,7 @@ export default function TicketList(props) {
           <p>{ticket.image}</p>
           <p>{ticket.price}</p>
           <p>{ticket.description}</p>
-          {/* <Link to={`/event/:eventId/${ticket.id}`}>Details</Link> */}
+          <Link to={`/ticket/${ticket.id}`}>Details</Link>
         </div>
       ))}
     </div>

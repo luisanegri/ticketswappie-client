@@ -15,7 +15,8 @@ export class TicketFormContainer extends Component {
     this.props.createTicket(
       this.state.price,
       this.state.description,
-      this.state.image
+      this.state.image,
+      this.state.eventId
     );
     this.setState({
       price: '',
@@ -29,6 +30,7 @@ export class TicketFormContainer extends Component {
       [event.target.name]: event.target.value
     });
   };
+
   render() {
     return (
       <div>
