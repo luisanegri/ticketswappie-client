@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EventDetail from './EventDetail';
-import { readEvent } from '../actions/events';
+import { readEvent } from '../../actions/events';
 
 export class EventDetailContainer extends Component {
   componentDidMount() {

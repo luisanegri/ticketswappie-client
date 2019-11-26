@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import { Form, Button, Col } from 'react-bootstrap';
 
 export default function EventForm(props) {
