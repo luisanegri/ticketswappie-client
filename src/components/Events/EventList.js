@@ -18,6 +18,7 @@ export default function EventList(props) {
                     </Col>
                     <Col>
                       <span>{event.name}</span>
+                      <Link to={`/event/${event.id}/ticket`}>click</Link>
                     </Col>
                   </Row>
                 </Card.Body>
