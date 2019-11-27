@@ -42,6 +42,7 @@ export class TicketFormContainer extends Component {
           onSubmit={this.onSubmit}
           value={this.state}
           ticket={this.props.ticket}
+          event={this.props.event}
         />
       </div>
     );
@@ -49,8 +50,10 @@ export class TicketFormContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state, 'ticket form state');
   return {
-    ticket: state.tickets
+    ticket: state.tickets,
+    event: state.events
   };
 };
 

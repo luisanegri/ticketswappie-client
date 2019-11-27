@@ -39,7 +39,7 @@ function App() {
             path="/event/:eventId/ticket/create"
             component={TicketFormContainer}
           /> */}
-          <Route exact path="/ticket/create" component={TicketFormContainer} />
+          <Route exact path="/create" component={TicketFormContainer} />
         </Switch>
       </Container>
     </Fragment>
