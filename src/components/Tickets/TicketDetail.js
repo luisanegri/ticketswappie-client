@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentFormContainer from '../Comments/CommentFormContainer';
+import CommentForm from '../Comments/CommentForm';
 import { Route } from 'react-router-dom';
 
 export default function TicketDetail(props) {
@@ -7,7 +7,7 @@ export default function TicketDetail(props) {
   return (
     <div>
       <p>{props.ticket.price}</p>
-      <CommentFormContainer />
+      <CommentForm />
     </div>
   );
 }

@@ -11,11 +11,14 @@ function createCommentSuccess(comment, ticketId) {
   };
 }
 
-export const createComment = (comment, ticketId) => dispatch => {
+export const createComment = (comment, ticketId) => (dispatch, getState) => {
   console.log('ticketId', ticketId);
   console.log('comment', comment);
+  const state = getState();
+  const jwt = state.user.jwt;
   request
     .post(`${baseUrl}/ticket/${ticketId}/comment`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send({ comment })
     .then(response => {
       const action = createCommentSuccess(response.text);
