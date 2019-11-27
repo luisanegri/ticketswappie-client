@@ -2,15 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
 import { Button, Form, Col } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   state = { email: '', password: '' };
-
-  componentDidUpdate() {
-    if (this.props.user.length !== 0) {
-      this.props.history.push('/event'); //  => try to understand...
-    }
-  }
 
   onChange = event => {
     this.setState({
@@ -24,7 +19,16 @@ class Login extends React.Component {
     this.setState({ email: '', password: '' });
   };
 
+  componentDidUpdate() {
+    const { user } = this.props;
+
+    if (user) {
+      this.props.history.push('/event');
+    }
+  }
+
   render() {
+    // if (this.props.user) return <Redirect to="/event" />;
     return (
       <div>
         <Form onSubmit={this.onSubmit}>
