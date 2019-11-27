@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 export default function EventList(props) {
   console.log(props);
@@ -9,21 +9,28 @@ export default function EventList(props) {
       <Row>
         {props.events.map(event => (
           <Col>
-            <Link to={`/event/${event.id}`}>
-              <Card key={event.id}>
-                <Card.Body>
-                  <Row>
-                    <Col>
-                      <div className="info-date">{event.start_date}</div>
-                    </Col>
-                    <Col>
-                      <span>{event.name}</span>
-                      <Link to={`/event/${event.id}/ticket`}>click</Link>
-                    </Col>
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Link>
+            <Card key={event.id}>
+              <Card.Body>
+                <Row>
+                  <Col>
+                    <div className="info-date">{event.start_date}</div>
+                  </Col>
+                  <Col>
+                    <span>{event.name}</span>
+                  </Col>
+                  <Col>
+                    <Button>
+                      <Link to={`/event/${event.id}/ticket`}>view tickets</Link>
+                    </Button>
+                  </Col>
+                  <Col>
+                    <Button>
+                      <Link to={`/event/${event.id}`}>view event</Link>
+                    </Button>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
           </Col>
         ))}
       </Row>

@@ -1,6 +1,6 @@
 import React from 'react';
 
 export default function TicketDetail(props) {
-  console.log('read ticket', props);
-  return <div></div>;
+  console.log('read ticket props', props);
+  return <div>{props.ticket.price}</div>;
 }

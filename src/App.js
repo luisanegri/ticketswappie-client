@@ -30,7 +30,7 @@ function App() {
           />
           <Route
             exact
-            path="/event/:eventId/ticket/:ticketId"
+            path="/ticket/:ticketId"
             component={TicketDetailContainer}
           />
           {/* <Route exact path="/event/:id/ticket" component={TicketListContainer} /> */}

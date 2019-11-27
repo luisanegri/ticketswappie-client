@@ -4,6 +4,10 @@ import TicketForm from './TicketForm';
 import { createTicket } from '../../actions/tickets';
 
 export class TicketFormContainer extends Component {
+  // componentDidMount() {
+  //   this.props.createTicket(this.match.params.eventId);
+  // }
+
   state = {
     price: '',
     description: '',
@@ -15,8 +19,7 @@ export class TicketFormContainer extends Component {
     this.props.createTicket(
       this.state.price,
       this.state.description,
-      this.state.image,
-      this.state.eventId
+      this.state.image
     );
     this.setState({
       price: '',
@@ -38,12 +41,22 @@ export class TicketFormContainer extends Component {
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           value={this.state}
+          ticket={this.props.ticket}
         />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    ticket: state.tickets
+  };
+};
+
 const mapDispatchToProps = { createTicket };
 
-export default connect(null, mapDispatchToProps)(TicketFormContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TicketFormContainer);

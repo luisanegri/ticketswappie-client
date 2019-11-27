@@ -28,6 +28,7 @@ export const createTicket = (
     .then(response => {
       console.log(response);
       const action = createTicketSuccess(response.body);
+      console.log(action, 'action are you there?');
       dispatch(action);
     })
     .catch(console.error);
@@ -45,7 +46,7 @@ export const readTickets = eventId => dispatch => {
     .get(`${baseUrl}/event/${eventId}/ticket`)
     .then(response => {
       const action = readTicketsSuccess(response.body);
-      console.log('read ticker action', action);
+      console.log('read ticketsss action', action);
       dispatch(action);
     })
     .catch(console.error);
@@ -56,14 +57,15 @@ export const readTicketSuccess = ticket => ({
   payload: ticket
 });
 
-export const readTicket = (id, ticket) => dispatch => {
-  console.log('readTicket id', id);
+export const readTicket = ticketId => dispatch => {
+  console.log('readTicket id', ticketId);
   request
-    .get(`${baseUrl}/event/${id}`)
-    .send(ticket)
+    .get(`${baseUrl}/ticket/${ticketId}`)
     .then(response => {
       console.log('readTicket response', response);
-      dispatch(readTicketSuccess(response.body));
+      const action = readTicketSuccess(response.body);
+      console.log('read ticket action', action);
+      dispatch(action);
     })
     .catch(console.error);
 };

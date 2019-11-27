@@ -5,8 +5,12 @@ import { readTicket } from '../../actions/tickets';
 
 export class TicketDetailContainer extends Component {
   componentDidMount() {
+    const id = this.props.match.params.ticketId;
+    console.log('readTicket id params', id);
+    // cool getting the id
     this.props.readTicket(this.props.match.params.ticketId);
   }
+
   render() {
     return (
       <div>
@@ -16,9 +20,13 @@ export class TicketDetailContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ticket: state.tickets
-});
+const mapStateToProps = state => {
+  // empty
+  console.log('read ticker detail state', state);
+  return {
+    ticket: state.tickets
+  };
+};
 
 const mapDispatchToProps = { readTicket };
 
