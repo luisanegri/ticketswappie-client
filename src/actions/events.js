@@ -12,15 +12,15 @@ function createEventSuccess(event) {
   };
 }
 
-export const createEvent = (
-  name,
-  description,
-  image,
-  start_date,
-  end_date
-) => dispatch => {
+export const createEvent = (name, description, image, start_date, end_date) => (
+  dispatch,
+  getState
+) => {
+  const state = getState();
+  const jwt = state.user.jwt;
   request
     .post(`${baseUrl}/event`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send({ name, description, image, start_date, end_date })
     .then(response => {
       const action = createEventSuccess(response.text);
@@ -36,9 +36,13 @@ function readEventsSuccess(events) {
   };
 }
 
-export const readEvents = () => dispatch => {
+export const readEvents = () => (dispatch, getState) => {
+  const state = getState();
+  console.log('get state', state);
+  // const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/event`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
       const action = readEventsSuccess(response.body);
       dispatch(action);
@@ -51,10 +55,12 @@ export const readEventSuccess = event => ({
   payload: event
 });
 
-export const readEvent = (id, event) => dispatch => {
-  console.log('loadEvent id', id);
+export const readEvent = (id, event) => (dispatch, getState) => {
+  const state = getState();
+  const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/event/${id}`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send(event)
     .then(response => {
       console.log('loadEvent response', response);

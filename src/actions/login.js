@@ -4,6 +4,7 @@ export const LOGIN = 'LOGIN';
 const baseUrl = 'http://localhost:4000';
 
 function loginSuccess(user) {
+  console.log(user, 'user');
   return {
     type: LOGIN,
     payload: user.jwt

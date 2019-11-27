@@ -6,16 +6,22 @@ import { Button, Form, Col } from 'react-bootstrap';
 class Login extends React.Component {
   state = { email: '', password: '' };
 
-  onSubmit = event => {
-    event.preventDefault();
-    this.props.login(this.state.email, this.state.password);
-    this.setState({ email: '', password: '' });
-  };
+  componentDidUpdate() {
+    if (this.props.user.length !== 0) {
+      this.props.history.push('/event'); //  => try to understand...
+    }
+  }
 
   onChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+    this.props.login(this.state.email, this.state.password);
+    this.setState({ email: '', password: '' });
   };
 
   render() {
@@ -53,6 +59,10 @@ class Login extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  user: state.user
+});
+
 const mapDispatchToProps = { login };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
