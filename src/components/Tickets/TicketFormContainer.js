@@ -4,10 +4,6 @@ import TicketForm from './TicketForm';
 import { createTicket } from '../../actions/tickets';
 
 export class TicketFormContainer extends Component {
-  // componentDidMount() {
-  //   this.props.createTicket(this.match.params.eventId);
-  // }
-
   state = {
     price: '',
     description: '',
@@ -19,7 +15,8 @@ export class TicketFormContainer extends Component {
     this.props.createTicket(
       this.state.price,
       this.state.description,
-      this.state.image
+      this.state.image,
+      this.props.match.params.eventId
     );
     this.setState({
       price: '',

@@ -28,14 +28,24 @@ export class CommentFormContainer extends Component {
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           value={this.state}
+          ticket={this.state.ticket}
         />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    ticket: state.ticket
+  };
+};
+
 const mapDispatchToProps = {
   createComment
 };
 
-export default connect(null, mapDispatchToProps)(CommentFormContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CommentFormContainer);

@@ -6,10 +6,11 @@ export const UPDATE_TICKET = 'UPDATE_TICKET';
 
 const baseUrl = 'http://localhost:4000';
 
-function createTicketSuccess(ticket) {
+function createTicketSuccess(ticket, eventId) {
   return {
     type: CREATE_TICKET,
-    payload: ticket
+    payload: ticket,
+    eventId
   };
 }
 
@@ -19,12 +20,12 @@ export const createTicket = (
   image,
   eventId
 ) => dispatch => {
-  console.log('id?????', eventId);
+  console.log('eventid', eventId);
   console.log('price', price);
-  console.log('description', description);
-  console.log('image', image);
+  console.log('des', description);
+  console.log('img', image);
   request
-    .post(`${baseUrl}/event/${eventId}/ticket/`)
+    .post(`${baseUrl}/event/${eventId}/ticket`)
     .send({ price, description, image })
     .then(response => {
       console.log(response);

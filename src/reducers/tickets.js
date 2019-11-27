@@ -1,7 +1,6 @@
 export default function(state = [], action = {}) {
   switch (action.type) {
     case 'CREATE_TICKET':
-      console.log(action.payload, ...state, 'create ticket reducer');
       return [action.payload, ...state];
     case 'READ_TICKETS':
       return action.payload;
