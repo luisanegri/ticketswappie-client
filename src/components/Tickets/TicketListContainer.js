@@ -13,7 +13,7 @@ export class TicketListContainer extends Component {
   render() {
     return (
       <div>
-        <TicketList tickets={this.props.tickets} />
+        <TicketList tickets={this.props.tickets} events={this.props.events} />
       </div>
     );
   }
@@ -21,7 +21,7 @@ export class TicketListContainer extends Component {
 
 const mapStateToProps = state => {
   console.log('tickets state', state);
-  return { tickets: state.tickets };
+  return { tickets: state.tickets, events: state.events };
 };
 
 const mapDispatchToProps = {

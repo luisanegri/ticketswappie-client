@@ -14,23 +14,19 @@ function createTicketSuccess(ticket, eventId) {
   };
 }
 
-export const createTicket = (
-  price,
-  description,
-  image,
-  eventId
-) => dispatch => {
-  console.log('eventid', eventId);
-  console.log('price', price);
-  console.log('des', description);
-  console.log('img', image);
+export const createTicket = (price, description, image, eventId) => (
+  dispatch,
+  getState
+) => {
+  console.log(eventId, 'eventId');
+  const state = getState();
+  const { user } = state;
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
+    .set('Authorization', `Bearer ${user}`)
     .send({ price, description, image })
     .then(response => {
-      console.log(response);
       const action = createTicketSuccess(response.body);
-      console.log(action, 'action are you there?');
       dispatch(action);
     })
     .catch(console.error);
@@ -60,13 +56,10 @@ export const readTicketSuccess = ticket => ({
 });
 
 export const readTicket = ticketId => dispatch => {
-  console.log('readTicket id', ticketId);
   request
     .get(`${baseUrl}/ticket/${ticketId}`)
     .then(response => {
-      console.log('readTicket response', response);
       const action = readTicketSuccess(response.body);
-      console.log('read ticket action', action);
       dispatch(action);
     })
     .catch(console.error);

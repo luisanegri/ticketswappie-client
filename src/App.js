@@ -33,12 +33,6 @@ function App() {
             path="/ticket/:ticketId"
             component={TicketDetailContainer}
           />
-          {/* <Route exact path="/event/:id/ticket" component={TicketListContainer} /> */}
-          {/* <Route
-            exact
-            path="/event/:eventId/ticket/create"
-            component={TicketFormContainer}
-          /> */}
           <Route
             exact
             path="/event/:eventId/ticket/create"

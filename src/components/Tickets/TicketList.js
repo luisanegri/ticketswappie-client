@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 export default function TicketList(props) {
   console.log('ticket list', props);
@@ -13,6 +14,10 @@ export default function TicketList(props) {
           <Link to={`/ticket/${ticket.id}`}>Details</Link>
         </div>
       ))}
+
+      <Link to={`/event/${props.events.eventId}/ticket/create`}>
+        <Button>Create a ticket</Button>
+      </Link>
     </div>
   );
 }

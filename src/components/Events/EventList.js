@@ -25,9 +25,12 @@ export default function EventList(props) {
                   </Col>
                   <Col>
                     <Button>
-                      <Link to={`/event/${event.id}`}>view event</Link>
+                      <Link to={`/event/${event.id}/ticket/create`}>
+                        create ticket
+                      </Link>
                     </Button>
                   </Col>
+                  <Col></Col>
                 </Row>
               </Card.Body>
             </Card>
