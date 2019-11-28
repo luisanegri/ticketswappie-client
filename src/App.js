@@ -39,11 +39,6 @@ function App() {
             path="/event/:eventId/ticket/create"
             component={TicketFormContainer}
           />
-          {/* <Route
-            exact
-            path="/ticket/:ticketId/comment"
-            component={CommentFormContainer}
-          /> */}
         </Switch>
       </Container>
     </Fragment>

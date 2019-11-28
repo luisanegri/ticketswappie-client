@@ -1,23 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row, Card, Table } from 'react-bootstrap';
+import '../../App.css';
 
 export default function TicketList(props) {
-  console.log('ticket list', props);
+  console.log(props);
+  const empty = !props.tickets.length;
+  if (empty) {
+    return <p className="info-message">No tickets available</p>;
+  }
   return (
-    <div>
-      {props.tickets.map(ticket => (
-        <div>
-          <img src={ticket.image} />
-          <p>{ticket.price}</p>
-          <p>{ticket.description}</p>
-          <Link to={`/ticket/${ticket.id}`}>Details</Link>
-        </div>
-      ))}
-
-      <Link to={`/event/${props.events.eventId}/ticket/create`}>
-        <Button>Create a ticket</Button>
-      </Link>
+    <div className="wrapper ticket-list">
+      <h1>Tickets available</h1>
+      <Row>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          {props.tickets.map(ticket => (
+            <tbody>
+              <tr>
+                <td>€ {ticket.price}</td>
+                <td>
+                  <Button id="btn-ticket-detail">
+                    <Link to={`/ticket/${ticket.id}`}>Details</Link>
+                  </Button>
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </Table>
+      </Row>
     </div>
   );
 }

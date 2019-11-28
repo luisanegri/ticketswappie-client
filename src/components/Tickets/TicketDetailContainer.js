@@ -7,7 +7,7 @@ import { createComment } from '../../actions/comments';
 
 export class TicketDetailContainer extends Component {
   state = {
-    comment: ''
+    comment: this.props.value
   };
 
   onSubmit = event => {
