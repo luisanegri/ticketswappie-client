@@ -32,6 +32,7 @@ export class CommentFormContainer extends Component {
           onSubmit={this.onSubmit}
           value={this.state}
           ticket={this.state.ticket}
+          user={this.props.user}
         />
       </div>
     );
@@ -40,7 +41,8 @@ export class CommentFormContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    ticket: state.ticket
+    ticket: state.ticket,
+    user: state.users
   };
 };
 
