@@ -34,6 +34,7 @@ export class CommentFormContainer extends Component {
           ticket={this.state.ticket}
           comments={this.state.comments}
           user={this.props.user}
+          comments={this.state.comments}
         />
       </div>
     );
