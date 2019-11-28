@@ -19,7 +19,7 @@ export class EventListContainer extends Component {
 
 const mapStateToProps = state => ({
   events: state.events,
-  user: state.user
+  user: state.users
 });
 
 const mapDispatchToProps = { readEvents };

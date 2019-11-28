@@ -19,12 +19,12 @@ export const createTicket = (price, description, image, eventId) => (
   getState
 ) => {
   const state = getState();
-  console.log('state', state);
-  // const jwt = state.user.jwt;
+  // console.log('state', state);
+  const jwt = state.users;
   // console.log('jwt', jwt);
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
-    // .set('Authorization', `Bearer ${jwt}`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send({ price, description, image })
     .then(response => {
       const action = createTicketSuccess(response.body);
