@@ -43,12 +43,16 @@ export class EventFormContainer extends Component {
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           value={this.state}
+          user={this.state.user}
         />
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return { user: state.users };
+};
 const mapDispatchToProps = { createEvent };
 
-export default connect(null, mapDispatchToProps)(EventFormContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(EventFormContainer);

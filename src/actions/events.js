@@ -56,11 +56,11 @@ export const readEventSuccess = event => ({
 });
 
 export const readEvent = (id, event) => (dispatch, getState) => {
-  const state = getState();
-  const jwt = state.user.jwt;
+  // const state = getState();
+  // const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/event/${id}`)
-    .set('Authorization', `Bearer ${jwt}`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .send(event)
     .then(response => {
       console.log('loadEvent response', response);

@@ -11,8 +11,8 @@ export class CommentFormContainer extends Component {
   onSubmit = event => {
     event.preventDefault();
     this.props.createComment(
-      this.state.comment,
-      this.props.match.params.eventId
+      this.state.comment
+      // this.props.match.params.ticketId
     );
     this.setState({
       comment: ''

@@ -19,10 +19,12 @@ export const createTicket = (price, description, image, eventId) => (
   getState
 ) => {
   const state = getState();
-  const jwt = state.user.jwt;
+  console.log('state', state);
+  // const jwt = state.user.jwt;
+  // console.log('jwt', jwt);
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
-    .set('Authorization', `Bearer ${jwt}`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .send({ price, description, image })
     .then(response => {
       const action = createTicketSuccess(response.body);
@@ -39,11 +41,11 @@ function readTicketsSuccess(tickets) {
 }
 
 export const readTickets = eventId => (dispatch, getState) => {
-  const state = getState();
-  const jwt = state.user.jwt;
+  // const state = getState();
+  // const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/event/${eventId}/ticket`)
-    .set('Authorization', `Bearer ${jwt}`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
       const action = readTicketsSuccess(response.body);
       console.log('read ticketsss action', action);
@@ -58,11 +60,11 @@ export const readTicketSuccess = ticket => ({
 });
 
 export const readTicket = ticketId => (dispatch, getState) => {
-  const state = getState();
-  const jwt = state.user.jwt;
+  // const state = getState();
+  // const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/ticket/${ticketId}`)
-    .set('Authorization', `Bearer ${jwt}`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
       const action = readTicketSuccess(response.body);
       dispatch(action);
