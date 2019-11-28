@@ -2,15 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
 import { Button, Form, Col } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   state = { email: '', password: '' };
-
-  onSubmit = event => {
-    event.preventDefault();
-    this.props.login(this.state.email, this.state.password);
-    this.setState({ email: '', password: '' });
-  };
 
   onChange = event => {
     this.setState({
@@ -18,7 +13,22 @@ class Login extends React.Component {
     });
   };
 
+  onSubmit = event => {
+    event.preventDefault();
+    this.props.login(this.state.email, this.state.password);
+    this.setState({ email: '', password: '' });
+  };
+
+  componentDidUpdate() {
+    const { user } = this.props;
+
+    if (user) {
+      this.props.history.push('/event');
+    }
+  }
+
   render() {
+    // if (this.props.user) return <Redirect to="/event" />;
     return (
       <div>
         <Form onSubmit={this.onSubmit}>
@@ -53,6 +63,10 @@ class Login extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  user: state.user
+});
+
 const mapDispatchToProps = { login };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
