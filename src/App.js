@@ -11,6 +11,7 @@ import EventDetailContainer from './components/Events/EventDetailContainer';
 import TicketListContainer from './components/Tickets/TicketListContainer';
 import TicketFormContainer from './components/Tickets/TicketFormContainer';
 import TicketDetailContainer from './components/Tickets/TicketDetailContainer';
+import CommentFormContainer from './components/Comments/CommentFormContainer';
 
 function App() {
   return (

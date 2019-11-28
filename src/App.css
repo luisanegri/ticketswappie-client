@@ -15,7 +15,8 @@ body {
 }
 
 .container .wrapper {
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .event-list a:hover {
@@ -23,16 +24,33 @@ body {
   color: black;
 }
 
-.event-list a {
+.event-list a,
+.ticket-list a {
   color: black;
+  font-size: 9.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'montserrat';
 }
 
 .event-list .card-body {
   background: rgba(0, 107, 166, 0.09);
+  min-height: 172px;
+  max-height: 172px;
+  border-radius: 29px;
+  padding: 29px 38px;
+  width: 335px;
+}
+
+.event-list .row-btn {
+  margin-top: 30px;
 }
 
 .event-list .card {
-  width: 65%;
+  width: 300px;
+  min-height: 172px;
+  max-height: 172px;
+  border: none;
 }
 
 .wrapper h1 {
@@ -43,7 +61,7 @@ body {
 }
 
 .navigation .bg {
-  background-color: #3069f0;
+  background-color: #1740da;
 }
 
 .navigation .nav-link a {
@@ -75,14 +93,60 @@ body {
   margin-top: 10px;
   background: #6df0c2;
   border-color: transparent;
-  padding: 8px 30px;
+  padding: 11px 16px;
   color: black;
 }
 
 .wrapper button:hover {
-  background: #3069f0;
+  background: #92b5cc;
+  /* or background: #B4C5E4; */
+  border-color: transparent;
+}
+
+.wrapper button:hover a {
+  color: white;
 }
 
 .hold-info {
   padding: 35px;
+}
+
+.ticket-list .table {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.ticket-list .table td {
+  vertical-align: inherit;
+}
+
+#btn-ticket-detail {
+  float: right;
+  margin-top: 1px;
+  padding: 6px 11px 9px;
+}
+
+#btn-ticket-detail a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.event-form,
+.ticket-form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-message {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.event-list .col-cards {
+  margin-top: 30px;
+}
+
+.event-list h1 {
+  margin-bottom: 20px !important;
 }

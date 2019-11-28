@@ -8,7 +8,7 @@ export default function CommentForm(props) {
     <div className="wrapper comment-form">
       <h1>Create a comment</h1>
       <Form onSubmit={props.onSubmit}>
-        <Form.Group controlId="exampleForm.ControlInput1">
+        <Form.Group controlId="">
           <Form.Label>Comment</Form.Label>
           <Form.Control
             type="text"

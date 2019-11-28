@@ -5,8 +5,8 @@ import { Form, Button, Col } from 'react-bootstrap';
 export default function TicketForm(props) {
   console.log('ticket form', props);
   return (
-    <div className="wrapper event-form">
-      <h1>Create a ticket</h1>
+    <div className="wrapper ticket-form">
+      <h1>Sell a ticket</h1>
       <Form onSubmit={props.onSubmit}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Price</Form.Label>

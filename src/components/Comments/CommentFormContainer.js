@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import CommentForm from './CommentForm';
 import { createComment } from '../../actions/comments';
 
-export class CommentFormContainer extends Component {
-  state = {
-    comment: ''
-  };
+ export class CommentFormContainer extends Component {
+   state = {
+     comment: ''
+   };
+
 
   onSubmit = event => {
     event.preventDefault();
@@ -33,6 +34,7 @@ export class CommentFormContainer extends Component {
           value={this.state}
           ticket={this.state.ticket}
           user={this.props.user}
+      comments={this.state.comments}
         />
       </div>
     );
@@ -42,15 +44,14 @@ export class CommentFormContainer extends Component {
 const mapStateToProps = state => {
   return {
     ticket: state.ticket,
-    user: state.users
+    user: state.users,
+    comments: state.comments
   };
 };
 
+
 const mapDispatchToProps = {
-  createComment
+ createComment
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CommentFormContainer);
+export default connect(mapStateToProps,mapDispatchToProps)(CommentFormContainer);

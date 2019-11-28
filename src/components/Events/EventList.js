@@ -3,12 +3,16 @@ import { Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 export default function EventList(props) {
   console.log(props);
+  const empty = !props.events.length;
+  if (empty) {
+    return <p className="info-message">No events</p>;
+  }
   return (
     <div className="wrapper event-list">
       <h1>Events</h1>
       <Row>
         {props.events.map(event => (
-          <Col>
+          <Col md={4} className="col-cards">
             <Card key={event.id}>
               <Card.Body>
                 <Row>
@@ -18,6 +22,8 @@ export default function EventList(props) {
                   <Col>
                     <span>{event.name}</span>
                   </Col>
+                </Row>
+                <Row className="row-btn">
                   <Col>
                     <Button>
                       <Link to={`/event/${event.id}/ticket`}>view tickets</Link>
@@ -30,7 +36,6 @@ export default function EventList(props) {
                       </Link>
                     </Button>
                   </Col>
-                  <Col></Col>
                 </Row>
               </Card.Body>
             </Card>
