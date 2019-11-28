@@ -8,16 +8,15 @@ export default function EventDetail(props) {
     <div className="wrapper event-detail">
       <Row>
         <Col>
-          <img src={props.event.image} />
+          <img src={props.event.end_date} />
         </Col>
         <Col className="col-right">
           <div className=" hold-info">
             <p>Event name: {props.event.name}</p>
             <p>Description: {props.event.description}</p>
             <p>Start date: {props.event.start_date}</p>
-            <p>End date: {props.event.end_date}</p>
+            <p>End date: {props.event.image}</p>
           </div>
-          <Button variant="primary">View Tickets</Button>
           <Row className="row-btn">
             <Col>
               <Button>
