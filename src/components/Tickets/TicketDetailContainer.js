@@ -7,7 +7,7 @@ import { createComment } from '../../actions/comments';
 
 export class TicketDetailContainer extends Component {
   state = {
-    comment: this.props.value
+    comment: ''
   };
 
   onSubmit = event => {
@@ -43,6 +43,7 @@ export class TicketDetailContainer extends Component {
           onSubmit={this.onSubmit}
           value={this.state}
           comments={this.props.comments}
+          user={this.props.user}
         />
       </div>
     );
@@ -54,7 +55,8 @@ const mapStateToProps = state => {
   console.log('read ticker detail state', state);
   return {
     ticket: state.tickets,
-    comments: state.comments
+    comments: state.comments,
+    user: state.users
   };
 };
 

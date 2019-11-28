@@ -12,18 +12,19 @@ export default function EventList(props) {
       <h1>Events</h1>
       <Row>
         {props.events.map(event => (
-          <Col md={4} className="col-cards">
-            <Card key={event.id}>
-              <Card.Body>
-                <Row>
-                  <Col>
-                    <div className="info-date">{event.start_date}</div>
-                  </Col>
-                  <Col>
-                    <span>{event.name}</span>
-                  </Col>
-                </Row>
-                <Row className="row-btn">
+          <Link to={`/event/${event.id}`}>
+            <Col md={4} className="col-cards">
+              <Card key={event.id}>
+                <Card.Body>
+                  <Row>
+                    <Col>
+                      <div className="info-date">{event.start_date}</div>
+                    </Col>
+                    <Col>
+                      <span>{event.name}</span>
+                    </Col>
+                  </Row>
+                  {/* <Row className="row-btn">
                   <Col>
                     <Button>
                       <Link to={`/event/${event.id}/ticket`}>view tickets</Link>
@@ -36,10 +37,11 @@ export default function EventList(props) {
                       </Link>
                     </Button>
                   </Col>
-                </Row>
-              </Card.Body>
-            </Card>
-          </Col>
+                </Row> */}
+                </Card.Body>
+              </Card>
+            </Col>
+          </Link>
         ))}
       </Row>
     </div>

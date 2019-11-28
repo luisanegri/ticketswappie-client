@@ -18,9 +18,20 @@ export default function EventDetail(props) {
             <p>End date: {props.event.end_date}</p>
           </div>
           <Button variant="primary">View Tickets</Button>
-          <Button>
-            <Link to={`/event/${props.event.id}/ticket/`}>view tickets</Link>
-          </Button>
+          <Row className="row-btn">
+            <Col>
+              <Button>
+                <Link to={`/event/${props.event.id}/ticket`}>view tickets</Link>
+              </Button>
+            </Col>
+            <Col>
+              <Button>
+                <Link to={`/event/${props.event.id}/ticket/create`}>
+                  create ticket
+                </Link>
+              </Button>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </div>

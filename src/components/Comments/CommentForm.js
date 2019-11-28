@@ -14,7 +14,7 @@ export default function CommentForm(props) {
             type="text"
             placeholder="Comment"
             onChange={props.onChange}
-            value={props.value.comment}
+            // value={props.value.comment}
             name="comment"
           />
         </Form.Group>
