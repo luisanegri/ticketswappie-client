@@ -7,6 +7,12 @@ import { Link } from 'react-router-dom';
 class SignUp extends React.Component {
   state = { email: '', password: '', username: '' };
 
+  // componentDidUpdate() {
+  //   if (this.props.user.length !== 0) {
+  //     this.props.history.push('/login'); //  => try to understand...
+  //   }
+  // }
+
   onSubmit = event => {
     event.preventDefault();
     this.props.signup(

@@ -18,12 +18,13 @@ export const createTicket = (price, description, image, eventId) => (
   dispatch,
   getState
 ) => {
-  console.log(eventId, 'eventId');
   const state = getState();
-  const { user } = state;
+  // console.log('state', state);
+  const jwt = state.users;
+  // console.log('jwt', jwt);
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
-    .set('Authorization', `Bearer ${user}`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send({ price, description, image })
     .then(response => {
       const action = createTicketSuccess(response.body);
@@ -39,9 +40,12 @@ function readTicketsSuccess(tickets) {
   };
 }
 
-export const readTickets = eventId => dispatch => {
+export const readTickets = eventId => (dispatch, getState) => {
+  // const state = getState();
+  // const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/event/${eventId}/ticket`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
       const action = readTicketsSuccess(response.body);
       console.log('read ticketsss action', action);
@@ -55,9 +59,12 @@ export const readTicketSuccess = ticket => ({
   payload: ticket
 });
 
-export const readTicket = ticketId => dispatch => {
+export const readTicket = ticketId => (dispatch, getState) => {
+  // const state = getState();
+  // const jwt = state.user.jwt;
   request
     .get(`${baseUrl}/ticket/${ticketId}`)
+    // .set('Authorization', `Bearer ${jwt}`)
     .then(response => {
       const action = readTicketSuccess(response.body);
       dispatch(action);
@@ -71,10 +78,12 @@ export const updateTicketSuccess = (ticketId, ticket) => ({
   ticketId
 });
 
-export const updateTicket = (ticketId, ticket) => dispatch => {
+export const updateTicket = (ticketId, ticket) => (dispatch, getState) => {
+  const state = getState();
+  const jwt = state.user.jwt;
   request
     .patch(`${baseUrl}/ticket/${ticketId}`)
-    // .set('Authorization', `Bearer ${jwt}`)
+    .set('Authorization', `Bearer ${jwt}`)
     .send(ticket)
     .then(response => {
       const action = updateTicketSuccess(response.body);

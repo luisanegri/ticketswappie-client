@@ -1,11 +1,14 @@
 import React from 'react';
 import '../../App.css';
 import { Form, Button, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function EventForm(props) {
+  console.log('event form', props);
   return (
     <div className="wrapper event-form">
       <h1>Create an Event</h1>
+      <Link to="/event">Back to Events</Link>
       <Form onSubmit={props.onSubmit}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Event name</Form.Label>

@@ -11,13 +11,16 @@ export class TicketFormContainer extends Component {
   };
 
   onSubmit = event => {
+    // const { jwt } = this.props;
     event.preventDefault();
     this.props.createTicket(
       this.state.price,
       this.state.description,
       this.state.image,
-      this.props.match.params.eventId
+      this.props.match.params.eventId,
+      this.props.jwt
     );
+    // console.log(this.props.jwt, 'jwt');
     this.setState({
       price: '',
       description: '',
@@ -40,6 +43,7 @@ export class TicketFormContainer extends Component {
           value={this.state}
           ticket={this.props.ticket}
           event={this.props.event}
+          jwt={this.props.jwt}
         />
       </div>
     );
@@ -50,7 +54,8 @@ const mapStateToProps = state => {
   console.log(state, 'ticket form state');
   return {
     ticket: state.tickets,
-    event: state.events
+    event: state.events,
+    jwt: state.users
   };
 };
 

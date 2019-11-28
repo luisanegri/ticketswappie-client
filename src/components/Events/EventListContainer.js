@@ -11,14 +11,15 @@ export class EventListContainer extends Component {
   render() {
     return (
       <div>
-        <EventList events={this.props.events} />
+        <EventList events={this.props.events} user={this.props.user} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  events: state.events
+  events: state.events,
+  user: state.users
 });
 
 const mapDispatchToProps = { readEvents };
