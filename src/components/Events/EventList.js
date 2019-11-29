@@ -17,11 +17,9 @@ export default function EventList(props) {
               <Card key={event.id}>
                 <Card.Body>
                   <Row>
-                    <Col>
-                      <div className="info-date">{event.start_date}</div>
-                    </Col>
-                    <Col>
-                      <span>{event.name}</span>
+                    <Col className="hold-info-event">
+                      <span className="info-event">Event: {event.name}</span>
+                      <div className="info-event">Date: {event.start_date}</div>
                     </Col>
                   </Row>
                   {/* <Row className="row-btn">

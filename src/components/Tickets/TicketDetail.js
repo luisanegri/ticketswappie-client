@@ -17,12 +17,12 @@ export default function TicketDetail(props) {
           </div>
         </Col>
       </Row>
-      {/* {props.comments.map(comment => (
+      {props.comments.map(comment => (
         <div>
-          <span>{comment.username}</span>
+          <span>{comment.username}: </span>
           <span>{comment.comment}</span>
         </div>
-      ))} */}
+      ))}
     </div>
   );
 }

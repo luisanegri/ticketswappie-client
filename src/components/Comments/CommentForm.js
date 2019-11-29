@@ -6,7 +6,6 @@ export default function CommentForm(props) {
   console.log('comment form ', props);
   return (
     <div className="wrapper comment-form">
-      <h1>Create a comment</h1>
       <Form onSubmit={props.onSubmit}>
         <Form.Group controlId="">
           <Form.Label>Comment</Form.Label>
