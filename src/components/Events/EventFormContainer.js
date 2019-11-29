@@ -51,6 +51,7 @@ export class EventFormContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state, 'form container state');
   return { user: state.users };
 };
 const mapDispatchToProps = { createEvent };

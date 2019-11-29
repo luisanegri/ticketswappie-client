@@ -7,7 +7,7 @@ function loginSuccess(user) {
   console.log(user, 'user');
   return {
     type: LOGIN,
-    payload: user.jwt
+    payload: user
   };
 }
 export const login = (email, password) => dispatch => {
@@ -18,6 +18,7 @@ export const login = (email, password) => dispatch => {
     .then(response => {
       // console.log("response", response);
       const action = loginSuccess(response.body);
+      console.log(action, 'action');
       dispatch(action);
     })
     .catch(console.error);

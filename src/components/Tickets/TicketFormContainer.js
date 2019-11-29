@@ -43,7 +43,7 @@ export class TicketFormContainer extends Component {
           value={this.state}
           ticket={this.props.ticket}
           event={this.props.event}
-          jwt={this.props.jwt}
+          user={this.props.user}
         />
       </div>
     );
@@ -55,7 +55,7 @@ const mapStateToProps = state => {
   return {
     ticket: state.tickets,
     event: state.events,
-    jwt: state.users
+    user: state.users
   };
 };
 

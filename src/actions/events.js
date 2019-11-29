@@ -17,13 +17,15 @@ export const createEvent = (name, description, image, start_date, end_date) => (
   getState
 ) => {
   const state = getState();
-  const jwt = state.users;
+  const jwt = state.users.jwt;
+  const userId = state.users.id;
+  console.log(userId, 'userId');
   request
     .post(`${baseUrl}/event`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({ name, description, image, start_date, end_date })
+    .send({ name, description, image, start_date, end_date, userId })
     .then(response => {
-      const action = createEventSuccess(response.text);
+      const action = createEventSuccess(response.body);
       dispatch(action);
     })
     .catch(console.error);
