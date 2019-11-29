@@ -4,7 +4,6 @@ import { Button, Col, Row, Card, Table } from 'react-bootstrap';
 import '../../App.css';
 
 export default function TicketList(props) {
-  console.log(props);
   const empty = !props.tickets.length;
   if (empty) {
     return <p className="info-message">No tickets available</p>;

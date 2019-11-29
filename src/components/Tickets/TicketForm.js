@@ -3,7 +3,6 @@ import '../../App.css';
 import { Form, Button, Col } from 'react-bootstrap';
 
 export default function TicketForm(props) {
-  console.log('ticket form', props);
   return (
     <div className="wrapper ticket-form">
       <h1>Sell a ticket</h1>

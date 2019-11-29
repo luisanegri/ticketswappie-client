@@ -47,7 +47,6 @@ body {
 }
 
 .event-list .card {
-  width: 300px;
   min-height: 172px;
   max-height: 172px;
   border: none;
@@ -153,4 +152,23 @@ body {
 
 .info-event {
   font-size: 15px;
+}
+
+.comment-form .form-group {
+  display: inline;
+}
+
+.comment-form .form-label {
+  display: inline;
+}
+
+.comment-form input {
+  width: 40%;
+  display: inline;
+  margin: 0 10px;
+}
+
+.comment-form .btn {
+  display: inline;
+  margin-top: -3px;
 }

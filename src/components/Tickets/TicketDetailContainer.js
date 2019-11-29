@@ -28,9 +28,6 @@ export class TicketDetailContainer extends Component {
   };
 
   componentDidMount() {
-    const id = this.props.match.params.ticketId;
-    console.log('readTicket id params', id);
-    // cool getting the id
     this.props.readTicket(this.props.match.params.ticketId);
   }
 
@@ -54,9 +51,6 @@ export class TicketDetailContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  // empty
-  console.log('read ticker detail state', state.comments);
-
   return {
     ticket: state.tickets,
     comments: state.comments,

@@ -19,7 +19,6 @@ export const createEvent = (name, description, image, start_date, end_date) => (
   const state = getState();
   const jwt = state.users.jwt;
   const userId = state.users.id;
-  console.log(userId, 'userId');
   request
     .post(`${baseUrl}/event`)
     .set('Authorization', `Bearer ${jwt}`)
@@ -58,7 +57,6 @@ export const readEvent = (id, event) => (dispatch, _getState) => {
     .get(`${baseUrl}/event/${id}`)
     .send(event)
     .then(response => {
-      console.log('loadEvent response', response);
       dispatch(readEventSuccess(response.body));
     })
     .catch(console.error);

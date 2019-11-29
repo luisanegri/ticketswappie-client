@@ -1,8 +1,6 @@
 import React from 'react';
-import CommentForm from '../Comments/CommentForm';
 import { Row, Col } from 'react-bootstrap';
 export default function TicketDetail(props) {
-  console.log('read ticket props', props);
   return (
     <div className="wrapper event-detail">
       <Row>
@@ -18,7 +16,7 @@ export default function TicketDetail(props) {
         </Col>
       </Row>
       {props.comments.map(comment => (
-        <div>
+        <div key={comment.id}>
           <span>{comment.username}: </span>
           <span>{comment.comment}</span>
         </div>

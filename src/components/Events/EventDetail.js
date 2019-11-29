@@ -3,7 +3,6 @@ import { Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function EventDetail(props) {
-  console.log('event detail props', props);
   return (
     <div className="wrapper event-detail">
       <Row>

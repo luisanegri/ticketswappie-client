@@ -17,8 +17,6 @@ export const createComment = (comment, ticketId) => (dispatch, getState) => {
   // get user id and send to back
   const userId = state.users.id;
   const username = state.users.username;
-  console.log('ticketId', ticketId);
-  console.log('comment', comment);
   request
     .post(`${baseUrl}/ticket/${ticketId}/comment`)
     .set('Authorization', `Bearer ${jwt}`)

@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 export default function EventList(props) {
-  console.log(props);
   const empty = !props.events.length;
   if (empty) {
     return <p className="info-message">No events</p>;
@@ -22,20 +21,6 @@ export default function EventList(props) {
                       <div className="info-event">Date: {event.start_date}</div>
                     </Col>
                   </Row>
-                  {/* <Row className="row-btn">
-                  <Col>
-                    <Button>
-                      <Link to={`/event/${event.id}/ticket`}>view tickets</Link>
-                    </Button>
-                  </Col>
-                  <Col>
-                    <Button>
-                      <Link to={`/event/${event.id}/ticket/create`}>
-                        create ticket
-                      </Link>
-                    </Button>
-                  </Col>
-                </Row> */}
                 </Card.Body>
               </Card>
             </Col>

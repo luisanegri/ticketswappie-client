@@ -11,12 +11,10 @@ function loginSuccess(user) {
 }
 
 export const signup = (username, email, password) => dispatch => {
-  //   console.log("dispatch test");
   request
     .post(`${baseUrl}/user`)
     .send({ username, email, password })
     .then(response => {
-      //   console.log(response.text);
       const action = loginSuccess(response.text);
       dispatch(action);
     })

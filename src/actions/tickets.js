@@ -45,7 +45,6 @@ export const readTickets = eventId => (dispatch, _getState) => {
     .get(`${baseUrl}/event/${eventId}/ticket`)
     .then(response => {
       const action = readTicketsSuccess(response.body);
-      console.log('read ticketsss action', action);
       dispatch(action);
     })
     .catch(console.error);
@@ -60,7 +59,6 @@ export const readTicket = ticket => (dispatch, _getState) => {
   request
     .get(`${baseUrl}/ticket/${ticket}`)
     .then(response => {
-      console.log('response', response);
       const action = readTicketSuccess(response.body);
       dispatch(action);
     })

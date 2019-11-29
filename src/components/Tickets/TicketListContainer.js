@@ -5,8 +5,6 @@ import { readTickets } from '../../actions/tickets';
 
 export class TicketListContainer extends Component {
   componentDidMount() {
-    const id = this.props.match.params.eventId;
-    console.log('params.id????', id);
     this.props.readTickets(this.props.match.params.eventId);
   }
 
