@@ -37,7 +37,10 @@ export class TicketDetailContainer extends Component {
   render() {
     return (
       <div>
-        <TicketDetail ticket={this.props.ticket} />
+        <TicketDetail
+          ticket={this.props.ticket}
+          comments={this.props.comments}
+        />
         <CommentForm
           onChange={this.onChange}
           onSubmit={this.onSubmit}
@@ -52,7 +55,8 @@ export class TicketDetailContainer extends Component {
 
 const mapStateToProps = state => {
   // empty
-  console.log('read ticker detail state', state);
+  console.log('read ticker detail state', state.comments);
+
   return {
     ticket: state.tickets,
     comments: state.comments,

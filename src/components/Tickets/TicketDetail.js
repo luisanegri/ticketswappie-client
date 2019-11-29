@@ -13,11 +13,16 @@ export default function TicketDetail(props) {
           <div className=" hold-info">
             <p>Event name: {props.ticket.price}</p>
             <p>Description: {props.ticket.description}</p>
-            <p>Seller: {props.ticket.userId}</p>
+            <p>Seller: {props.ticket.username}</p>
           </div>
         </Col>
       </Row>
-      {/* <CommentForm /> */}
+      {/* {props.comments.map(comment => (
+        <div>
+          <span>{comment.username}</span>
+          <span>{comment.comment}</span>
+        </div>
+      ))} */}
     </div>
   );
 }
