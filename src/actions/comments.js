@@ -6,23 +6,25 @@ const baseUrl = 'http://localhost:4000';
 function createCommentSuccess(comment, ticketId) {
   return {
     type: CREATE_COMMENT,
-    payload: ticketId,
-    comment
+    payload: comment,
+    ticketId
   };
 }
 
 export const createComment = (comment, ticketId) => (dispatch, getState) => {
   const state = getState();
-  const jwt = state.users;
-
+  const jwt = state.users.jwt;
+  // get user id and send to back
+  const userId = state.users.id;
+  const username = state.users.username;
   console.log('ticketId', ticketId);
   console.log('comment', comment);
   request
     .post(`${baseUrl}/ticket/${ticketId}/comment`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({ comment })
+    .send({ comment, userId, username })
     .then(response => {
-      const action = createCommentSuccess(response.text);
+      const action = createCommentSuccess(response.body);
       console.log('action', action);
       dispatch(action);
     })

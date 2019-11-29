@@ -3,7 +3,7 @@ export default function(state = [], action = {}) {
     case 'CREATE_EVENT':
       return action.payload;
     case 'READ_EVENTS':
-      return action.payload;
+      return [...state, action.payload];
     case 'READ_EVENT':
       return action.payload;
     default:
