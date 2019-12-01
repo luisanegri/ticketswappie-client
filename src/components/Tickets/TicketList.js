@@ -23,7 +23,9 @@ export default function TicketList(props) {
                 <th>
                   <p>Risk</p>
                 </th>
-                <th></th>
+                <th>
+                  <p className="action">Action</p>
+                </th>
                 <th>
                   <p className="tb-lbl">Details</p>
                 </th>
@@ -45,8 +47,11 @@ export default function TicketList(props) {
                     ) : null}
                   </td>
 
-                  <td>
-                    <Button onClick={() => props.deleteTicket(ticket.id)}>
+                  <td className="btn-delete">
+                    <Button
+                      onClick={() => props.deleteTicket(ticket.id)}
+                      id="btn-ticket-delete"
+                    >
                       Delete
                     </Button>
                   </td>

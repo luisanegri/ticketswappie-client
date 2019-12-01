@@ -9,7 +9,7 @@ risk colours:
 red: #FF5E5B
 
 */
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Montserrat:400,500,600,700|Roboto:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Montserrat:400,500,600,700|Roboto:400,500,700|Anton&display=swap');
 
 body,
 html {
@@ -19,6 +19,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  background: #fafafa;
 }
 
 .container .wrapper {
@@ -136,11 +137,20 @@ body {
   vertical-align: inherit;
 }
 
-#btn-ticket-detail {
+#btn-ticket-detail,
+#btn-ticket-delete {
   margin: inherit;
   margin-top: 1px;
   padding: 6px 11px 9px;
   float: right;
+}
+
+#btn-ticket-detail {
+  background: #1740da;
+}
+
+#btn-ticket-detail:hover {
+  background: #f03a47;
 }
 
 #btn-ticket-detail a:hover {
@@ -193,14 +203,17 @@ body {
 
 .ticket-list .risk-green {
   color: #4cb944;
+  margin-left: 10px;
 }
 
-.risk-yellow {
+.ticket-list .risk-yellow {
   color: #fffd82;
+  margin-left: 10px;
 }
 
-.risk-red {
+.ticket-list .risk-red {
   color: red;
+  margin-left: 10px;
 }
 
 .hero {
@@ -221,21 +234,28 @@ body {
 .hero-inner h2:first-child {
   text-align: center;
   line-height: 20px;
+  font-size: 38px;
+  letter-spacing: 2px;
+  color: #47d5b8;
 }
 
 .hero-inner h2 {
   font-weight: bold;
-  color: #fafafa;
   line-height: 40px;
   text-align: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 38px;
+  color: #47d5b8;
+  letter-spacing: 2px;
 }
 
 .hero-inner {
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .home-wrapper .row-home-btn {
-  width: 41%;
+  width: 31%;
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -253,7 +273,7 @@ body {
   background-image: linear-gradient(
     to right,
     #1740da 0%,
-    #f03a47 68%,
+    #47d5b8 68%,
     #f03a47 100%
   );
   border: none;
@@ -330,4 +350,13 @@ body {
   text-align: center;
   margin: 0 auto;
   display: block;
+}
+
+.btn-delete {
+  margin-left: 94px;
+}
+
+.action {
+  float: right;
+  margin-right: 14px;
 }

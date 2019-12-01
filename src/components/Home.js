@@ -13,20 +13,20 @@ export default function Home() {
             <div class="hero-inner">
               <h2>THE EASIEST WAY TO SELL TICKETS FOR YOUR EVENTS </h2>
               <br></br>
-              <h2> AND THE MOST SECURE WAY TO BUY TICKETS</h2>
-              <Row className="row-home-btn">
-                <Col>
-                  <Link to="/signup">
-                    <Button className="btn-grad">Create Event</Button>
-                  </Link>
-                </Col>
-                <Col>
-                  <Link to="/event">
-                    <Button className="btn-grad">Events</Button>
-                  </Link>
-                </Col>
-              </Row>
+              <h2> THE MOST SECURE WAY TO BUY TICKETS</h2>
             </div>
+          </Row>
+          <Row className="row-home-btn">
+            <Col>
+              <Link to="/signup">
+                <Button className="btn-grad">Create Event</Button>
+              </Link>
+            </Col>
+            <Col>
+              <Link to="/event">
+                <Button className="btn-grad">Events</Button>
+              </Link>
+            </Col>
           </Row>
         </Container>
       </section>
