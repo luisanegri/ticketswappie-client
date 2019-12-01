@@ -257,6 +257,7 @@ body {
 .hero-inner {
   margin: 0 auto;
   margin-bottom: 50px;
+  background: black;
 }
 
 .home-wrapper .row-home-btn {
