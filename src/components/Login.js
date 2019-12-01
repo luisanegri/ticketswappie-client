@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
-import { Button, Form, Col } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
@@ -30,35 +30,33 @@ class Login extends React.Component {
   render() {
     // if (this.props.user) return <Redirect to="/event" />;
     return (
-      <div>
-        <Form onSubmit={this.onSubmit}>
-          <Form.Label>Login</Form.Label>
-          <Form.Row>
-            <Col>
+      <Container>
+        <div className="wrapper signup-wrapper">
+          <Form onSubmit={this.onSubmit}>
+            <h1>Login</h1>
+            <Form.Row>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 onChange={this.onChange}
                 value={this.state.email}
                 name="email"
                 placeholder="email"
               />
-            </Col>
-            <Col>
-              <Form.Group controlId="formBasicPassword">
-                <Form.Control
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  name="password"
-                  placeholder="password"
-                  type="password"
-                />
-              </Form.Group>
-            </Col>
-            <Col>
+
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                onChange={this.onChange}
+                value={this.state.password}
+                name="password"
+                placeholder="password"
+                type="password"
+              />
+
               <Button type="submit">Login</Button>
-            </Col>
-          </Form.Row>
-        </Form>
-      </div>
+            </Form.Row>
+          </Form>
+        </div>
+      </Container>
     );
   }
 }

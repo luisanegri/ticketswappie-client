@@ -1,6 +1,13 @@
 /*
-primary-color: blue #157DFB (navbar, button)
-secondary-color: green #69D1C5
+primary-color: blue #1740DA(navbar, button)
+secondary-color: light blue #E7F1F6
+button: orange #F03A47
+shadow: #ccc
+risk colours:
+- green: 4CB944
+- yellow: #FFFD82
+red: #FF5E5B
+
 */
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Montserrat:400,500,600,700|Roboto:400,500,700&display=swap');
 
@@ -24,9 +31,12 @@ body {
   color: black;
 }
 
+.event-list a {
+  color: black !important;
+}
 .event-list a,
 .ticket-list a {
-  color: black;
+  color: white;
   font-size: 9.8px;
   text-transform: uppercase;
   font-weight: 600;
@@ -40,6 +50,7 @@ body {
   border-radius: 29px;
   padding: 29px 38px;
   width: 335px;
+  box-shadow: 0 8px 10px -6px #ccc;
 }
 
 .event-list .row-btn {
@@ -55,8 +66,9 @@ body {
 .wrapper h1 {
   margin-bottom: 50px;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
+  font-family: 'montserrat';
 }
 
 .navigation .bg {
@@ -83,27 +95,32 @@ body {
 }
 
 .event-detail .col-right {
-  background: rgba(0, 107, 166, 0.09);
+  background: #e7f1f6;
 }
 
 .wrapper button {
   margin: 0 auto;
   display: block;
   margin-top: 10px;
-  background: #6df0c2;
+  background: #f03a47;
   border-color: transparent;
   padding: 11px 16px;
-  color: black;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .wrapper button:hover {
-  background: #92b5cc;
+  /* background: #92b5cc; */
   /* or background: #B4C5E4; */
   border-color: transparent;
+  border-color: transparent;
+  background: #1740da;
 }
 
 .wrapper button:hover a {
   color: white;
+  text-decoration: none;
 }
 
 .hold-info {
@@ -120,9 +137,10 @@ body {
 }
 
 #btn-ticket-detail {
-  float: right;
+  margin: inherit;
   margin-top: 1px;
   padding: 6px 11px 9px;
+  float: right;
 }
 
 #btn-ticket-detail a:hover {
@@ -171,4 +189,145 @@ body {
 .comment-form .btn {
   display: inline;
   margin-top: -3px;
+}
+
+.ticket-list .risk-green {
+  color: #4cb944;
+}
+
+.risk-yellow {
+  color: #fffd82;
+}
+
+.risk-red {
+  color: red;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  /* background-image: url(client/public/people-lifting-man-2417726.jpg); */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-inner h2:first-child {
+  text-align: center;
+  line-height: 20px;
+}
+
+.hero-inner h2 {
+  font-weight: bold;
+  color: #fafafa;
+  line-height: 40px;
+  text-align: center;
+}
+
+.hero-inner {
+  margin: 0 auto;
+}
+
+.home-wrapper .row-home-btn {
+  width: 41%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.home-wrapper .btn-grad {
+  padding: 16px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  font-family: 'montserrat';
+  font-size: 13px;
+  font-weight: 600;
+  background-image: linear-gradient(
+    to right,
+    #1740da 0%,
+    #f03a47 68%,
+    #f03a47 100%
+  );
+  border: none;
+}
+.btn-grad:hover {
+  background-position: right center;
+}
+
+.signup-wrapper p {
+  text-align: center;
+  font-weight: 100;
+}
+
+.signup-wrapper .form-row {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.signup-wrapper h1 {
+  margin-bottom: 11px;
+}
+
+.signup-wrapper .form-control {
+  margin-bottom: 20px;
+}
+
+.signup-wrapper a {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  color: black;
+  text-decoration: underline;
+}
+
+.event-detail button a {
+  color: white;
+}
+
+.event-detail .row-btn {
+  margin: 0 auto;
+  width: 51%;
+}
+
+.event-list .row-btn {
+  margin: 0 auto;
+  width: 52%;
+  margin-top: 40px;
+}
+
+.risk {
+  float: right;
+}
+
+.tb-lbl {
+  float: right;
+  margin-right: 10px;
+}
+
+.table-list .table th {
+  padding: 19px 12px 9px 0px;
+}
+
+.comment-block {
+  margin-top: 70px !important;
+  background: #e7f1f6;
+  padding: 50px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.comment-form form {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }

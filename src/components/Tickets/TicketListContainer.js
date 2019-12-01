@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TicketList from './TicketList';
-import { readTickets } from '../../actions/tickets';
+import { readTickets, deleteTicket } from '../../actions/tickets';
 
 export class TicketListContainer extends Component {
   componentDidMount() {
@@ -11,7 +11,12 @@ export class TicketListContainer extends Component {
   render() {
     return (
       <div>
-        <TicketList tickets={this.props.tickets} events={this.props.events} />
+        <TicketList
+          tickets={this.props.tickets}
+          events={this.props.events}
+          deleteTicket={this.props.deleteTicket}
+          user={this.props.user}
+        />
       </div>
     );
   }
@@ -19,11 +24,12 @@ export class TicketListContainer extends Component {
 
 const mapStateToProps = state => {
   console.log('tickets state', state);
-  return { tickets: state.tickets, events: state.events };
+  return { tickets: state.tickets, events: state.events, user: state.users };
 };
 
 const mapDispatchToProps = {
-  readTickets
+  readTickets,
+  deleteTicket
 };
 
 export default connect(

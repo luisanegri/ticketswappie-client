@@ -3,6 +3,7 @@ export const READ_TICKETS = 'READ_TICKETS';
 export const READ_TICKET = 'READ_TICKET';
 export const CREATE_TICKET = 'CREATE_TICKET';
 export const UPDATE_TICKET = 'UPDATE_TICKET';
+export const DELETE_TICKET = 'DELETE_TICKET';
 
 const baseUrl = 'http://localhost:4000';
 
@@ -55,10 +56,12 @@ export const readTicketSuccess = ticket => ({
   payload: ticket
 });
 
-export const readTicket = ticket => (dispatch, _getState) => {
+export const readTicket = ticketId => (dispatch, _getState) => {
   request
-    .get(`${baseUrl}/ticket/${ticket}`)
+    .get(`${baseUrl}/ticket/${ticketId}`)
+
     .then(response => {
+      console.log('ticket res', response.body);
       const action = readTicketSuccess(response.body);
       dispatch(action);
     })
@@ -83,5 +86,23 @@ export const updateTicket = (ticketId, ticket) => (dispatch, getState) => {
       dispatch(action);
     })
 
+    .catch(console.error);
+};
+
+export const deleteTicketSuccess = ticketId => {
+  return {
+    type: 'DELETE_TICKET',
+    payload: ticketId
+  };
+};
+
+export const deleteTicket = ticketId => (dispatch, _getState) => {
+  console.log('delete', ticketId);
+  request
+    .delete(`${baseUrl}/ticket/${ticketId}`)
+    .then(response => {
+      console.log('deleteEvent response', response);
+      dispatch(deleteTicketSuccess(response.body));
+    })
     .catch(console.error);
 };

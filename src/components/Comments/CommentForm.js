@@ -19,6 +19,12 @@ export default function CommentForm(props) {
         </Form.Group>
         <Button type="submit">Add</Button>
       </Form>
+      {props.comments.map(comment => (
+        <div key={comment.id} className="comment-block">
+          <span>{comment.username}: </span>
+          <span>{comment.comment}</span>
+        </div>
+      ))}
     </div>
   );
 }

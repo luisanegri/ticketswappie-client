@@ -4,6 +4,7 @@ import TicketDetail from './TicketDetail';
 import CommentForm from '../Comments/CommentForm';
 import { readTicket } from '../../actions/tickets';
 import { createComment } from '../../actions/comments';
+import { Container } from 'react-bootstrap';
 
 export class TicketDetailContainer extends Component {
   state = {
@@ -34,17 +35,21 @@ export class TicketDetailContainer extends Component {
   render() {
     return (
       <div>
-        <TicketDetail
-          ticket={this.props.ticket}
-          comments={this.props.comments}
-        />
-        <CommentForm
-          onChange={this.onChange}
-          onSubmit={this.onSubmit}
-          value={this.state}
-          comments={this.props.comments}
-          user={this.props.user}
-        />
+        <Container>
+          <TicketDetail
+            ticket={this.props.ticket}
+            comments={this.props.comments}
+            event={this.props.event}
+          />
+
+          <CommentForm
+            onChange={this.onChange}
+            onSubmit={this.onSubmit}
+            value={this.state}
+            comments={this.props.comments}
+            user={this.props.user}
+          />
+        </Container>
       </div>
     );
   }
@@ -54,7 +59,8 @@ const mapStateToProps = state => {
   return {
     ticket: state.tickets,
     comments: state.comments,
-    user: state.users
+    user: state.users,
+    event: state.events
   };
 };
 
