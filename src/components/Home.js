@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import Img from '../group-of-people-raising-their-hands-2078076.jpg';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import Img from '../silhouette-of-crowd-people-1486628.jpg';
+import { Container, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -16,18 +16,15 @@ export default function Home() {
               <h2> THE MOST SECURE WAY TO BUY TICKETS</h2>
             </div>
           </Row>
-          <Row className="row-home-btn">
-            <Col>
-              <Link to="/signup">
-                <Button className="btn-grad">Create Event</Button>
-              </Link>
-            </Col>
-            <Col>
-              <Link to="/event">
-                <Button className="btn-grad">Events</Button>
-              </Link>
-            </Col>
-          </Row>
+          <div className="row-home-btn">
+            <Link to="/signup">
+              <Button className="btn-grad">Create Event</Button>
+            </Link>
+
+            <Link to="/event">
+              <Button className="btn-grad">Events</Button>
+            </Link>
+          </div>
         </Container>
       </section>
     </div>
