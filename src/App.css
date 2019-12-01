@@ -117,8 +117,6 @@ body {
 }
 
 .wrapper button:hover {
-  /* background: #92b5cc; */
-  /* or background: #B4C5E4; */
   border-color: transparent;
   border-color: transparent;
   background: #1740da;
@@ -173,14 +171,6 @@ body {
 .info-message {
   text-align: center;
   margin-top: 100px;
-}
-
-.event-list .col-cards {
-  margin-top: 30px;
-}
-
-.event-list h1 {
-  margin-bottom: 20px !important;
 }
 
 .info-event {
@@ -249,7 +239,7 @@ body {
   line-height: 40px;
   text-align: center;
   font-family: 'Anton', sans-serif;
-  font-size: 38px;
+  font-size: 35px;
   color: #fafafa;
   letter-spacing: 2px;
 }
@@ -257,7 +247,6 @@ body {
 .hero-inner {
   margin: 0 auto;
   margin-bottom: 50px;
-  background: black;
 }
 
 .home-wrapper .row-home-btn {

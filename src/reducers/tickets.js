@@ -10,7 +10,6 @@ export default function(state = [], action = {}) {
     case 'UPDATE_TICKET':
       return action.payload;
     case 'DELETE_TICKET':
-      console.log('action being called?', action.payload);
       return state.filter(ticket => ticket.id !== action.payload);
     default:
       return state;

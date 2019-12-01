@@ -9,7 +9,7 @@ class SignUp extends React.Component {
 
   // componentDidUpdate() {
   //   if (this.props.user.length !== 0) {
-  //     this.props.history.push('/login'); //  => try to understand...
+  //     this.props.history.push('/login');
   //   }
   // }
 

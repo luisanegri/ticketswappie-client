@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 export default function EventList(props) {
-  console.log('event list props', props);
   const empty = !props.events.length;
   if (empty) {
     return <p className="info-message">No events</p>;

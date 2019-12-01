@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import { Form, Button, Col, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 export default function EventForm(props) {
   return (

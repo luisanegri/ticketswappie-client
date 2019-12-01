@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Img from '../silhouette-of-crowd-people-1486628.jpg';
+import Img from '../people-in-concert-1763075.jpg';
 import { Container, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
