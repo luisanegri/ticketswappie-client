@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import TicketDetail from './TicketDetail';
 import CommentForm from '../Comments/CommentForm';
 import { readTicket } from '../../actions/tickets';
-import { createComment } from '../../actions/comments';
+import { createComment, readComments } from '../../actions/comments';
 import { Container } from 'react-bootstrap';
 
 export class TicketDetailContainer extends Component {
@@ -30,6 +30,7 @@ export class TicketDetailContainer extends Component {
 
   componentDidMount() {
     this.props.readTicket(this.props.match.params.ticketId);
+    this.props.readComments(this.props.match.params.ticketId);
   }
 
   render() {
@@ -64,7 +65,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = { readTicket, createComment };
+const mapDispatchToProps = { readTicket, createComment, readComments };
 
 export default connect(
   mapStateToProps,

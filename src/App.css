@@ -196,17 +196,17 @@ body {
   margin-top: -3px;
 }
 
-.ticket-list .risk-green {
+.risk-green {
   color: #4cb944;
   margin-left: 10px;
 }
 
-.ticket-list .risk-yellow {
+.risk-yellow {
   color: #fffd82;
   margin-left: 10px;
 }
 
-.ticket-list .risk-red {
+.risk-red {
   color: red;
   margin-left: 10px;
 }

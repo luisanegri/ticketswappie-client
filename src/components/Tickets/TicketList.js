@@ -20,13 +20,7 @@ export default function TicketList(props) {
                   <p>Price</p>
                 </th>
                 <th>
-                  <p>Risk</p>
-                </th>
-                <th>
-                  <p className="action">Action</p>
-                </th>
-                <th>
-                  <p className="tb-lbl">Details</p>
+                  <p className="tb-lbl"></p>
                 </th>
               </tr>
             </thead>
@@ -34,27 +28,14 @@ export default function TicketList(props) {
               <tbody>
                 <tr>
                   <td>€ {ticket.price}</td>
-                  <td>
-                    {ticket.risk < 15 ? (
-                      <i className="fa fa-circle risk-green"></i>
-                    ) : null}
-                    {ticket.risk > 15 && ticket.risk < 55 ? (
-                      <i className="fa fa-circle risk-yellow"></i>
-                    ) : null}
-                    {ticket.risk > 55 ? (
-                      <i className="fa fa-circle risk-red"></i>
-                    ) : null}
-                  </td>
-
-                  <td className="btn-delete">
+                  {/* <td className="btn-delete">
                     <Button
                       onClick={() => props.deleteTicket(ticket.id)}
                       id="btn-ticket-delete"
                     >
                       Delete
                     </Button>
-                  </td>
-
+                  </td> */}
                   <td>
                     <Button id="btn-ticket-detail">
                       <Link to={`/ticket/${ticket.id}`}>Details</Link>
