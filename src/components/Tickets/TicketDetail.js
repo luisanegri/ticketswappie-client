@@ -1,8 +1,10 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../../App.css';
+import EditTicketContainer from './EditTicketContainer';
 
 export default function TicketDetail(props) {
+  console.log('ticket detail props', props);
   return (
     <Container>
       <div className="wrapper event-detail">
@@ -18,13 +20,13 @@ export default function TicketDetail(props) {
               <span>Risk: {props.ticket.risk}%</span>
               <span>
                 {props.ticket.risk < 15 ? (
-                  <i className="fa fa-circle risk-green"></i>
+                  <i className="fa fa-circle risk-green">low risk</i>
                 ) : null}
                 {props.ticket.risk > 15 && props.ticket.risk < 55 ? (
-                  <i className="fa fa-circle risk-yellow"></i>
+                  <i className="fa fa-circle risk-yellow">medium risk</i>
                 ) : null}
                 {props.ticket.risk > 55 ? (
-                  <i className="fa fa-circle risk-red"></i>
+                  <i className="fa fa-circle risk-red">high risk</i>
                 ) : null}
               </span>
             </div>

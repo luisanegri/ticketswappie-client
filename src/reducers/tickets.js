@@ -1,4 +1,4 @@
-export default function(state = [], action = {}) {
+export default function (state = [], action = {}) {
   switch (action.type) {
     case 'CREATE_TICKET':
       return action.payload;
@@ -10,7 +10,7 @@ export default function(state = [], action = {}) {
     case 'UPDATE_TICKET':
       return action.payload;
     case 'DELETE_TICKET':
-      return state.filter(ticket => ticket.id !== action.payload);
+      return state.filter((ticket) => ticket.id !== action.payload);
     default:
       return state;
   }

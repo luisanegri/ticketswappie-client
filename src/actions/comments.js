@@ -2,13 +2,13 @@ import request from 'superagent';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
 export const READ_COMMENTS = 'READ_COMMENTS';
 
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'http://localhost:4001';
 
 function createCommentSuccess(comment, ticketId) {
   return {
     type: CREATE_COMMENT,
     payload: comment,
-    ticketId
+    ticketId,
   };
 }
 
@@ -17,12 +17,15 @@ export const createComment = (comment, ticketId) => (dispatch, getState) => {
   const jwt = state.users.jwt;
   // get user id and send to back
   const userId = state.users.id;
-  const username = state.users.username;
+  const email = state.users.email;
+  console.log('userId', userId);
+  console.log('email', email);
+
   request
     .post(`${baseUrl}/ticket/${ticketId}/comment`)
     .set('Authorization', `Bearer ${jwt}`)
-    .send({ comment, userId, username })
-    .then(response => {
+    .send({ comment, userId, email })
+    .then((response) => {
       const action = createCommentSuccess(response.body);
       console.log('action', action);
       dispatch(action);
@@ -33,14 +36,14 @@ export const createComment = (comment, ticketId) => (dispatch, getState) => {
 function readCommentsSuccess(comment) {
   return {
     type: READ_COMMENTS,
-    payload: comment
+    payload: comment,
   };
 }
 
-export const readComments = ticketId => (dispatch, _getState) => {
+export const readComments = (ticketId) => (dispatch, _getState) => {
   request
     .get(`${baseUrl}/${ticketId}/comment`)
-    .then(response => {
+    .then((response) => {
       const action = readCommentsSuccess(response.body);
       dispatch(action);
     })

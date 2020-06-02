@@ -5,13 +5,13 @@ export const CREATE_TICKET = 'CREATE_TICKET';
 export const UPDATE_TICKET = 'UPDATE_TICKET';
 export const DELETE_TICKET = 'DELETE_TICKET';
 
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'http://localhost:4001';
 
 function createTicketSuccess(ticket, eventId) {
   return {
     type: CREATE_TICKET,
     payload: ticket,
-    eventId
+    eventId,
   };
 }
 
@@ -23,11 +23,13 @@ export const createTicket = (price, description, image, eventId) => (
   const jwt = state.users.jwt;
   const userId = state.users.id;
   const username = state.users.username;
+  const risk = state.tickets.risk;
+  console.log('ris', risk);
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
     .set('Authorization', `Bearer ${jwt}`)
     .send({ price, description, image, userId, username })
-    .then(response => {
+    .then((response) => {
       const action = createTicketSuccess(response.body);
       dispatch(action);
     })
@@ -37,32 +39,33 @@ export const createTicket = (price, description, image, eventId) => (
 function readTicketsSuccess(tickets) {
   return {
     type: READ_TICKETS,
-    payload: tickets
+    payload: tickets,
   };
 }
 
-export const readTickets = eventId => (dispatch, _getState) => {
+export const readTickets = (eventId) => (dispatch, _getState) => {
   request
     .get(`${baseUrl}/event/${eventId}/ticket`)
-    .then(response => {
+    .then((response) => {
       const action = readTicketsSuccess(response.body);
+      console.log('actiom', action);
       dispatch(action);
     })
     .catch(console.error);
 };
 
-export const readTicketSuccess = ticket => ({
+export const readTicketSuccess = (ticket) => ({
   type: READ_TICKET,
-  payload: ticket
+  payload: ticket,
 });
 
-export const readTicket = ticketId => (dispatch, _getState) => {
+export const readTicket = (ticketId) => (dispatch, _getState) => {
   request
     .get(`${baseUrl}/ticket/${ticketId}`)
-
-    .then(response => {
-      console.log('ticket res', response.body);
+    .then((response) => {
+      console.log('response ticket', response);
       const action = readTicketSuccess(response.body);
+      console.log('ticket response', action);
       dispatch(action);
     })
     .catch(console.error);
@@ -71,17 +74,17 @@ export const readTicket = ticketId => (dispatch, _getState) => {
 export const updateTicketSuccess = (ticketId, ticket) => ({
   type: UPDATE_TICKET,
   payload: ticket,
-  ticketId
+  ticketId,
 });
 
-export const updateTicket = (ticketId, ticket) => (dispatch, getState) => {
+export const updateTicket = (ticket, ticketId) => (dispatch, getState) => {
   const state = getState();
-  const jwt = state.user.jwt;
+  const jwt = state.users.jwt;
   request
-    .patch(`${baseUrl}/ticket/${ticketId}`)
+    .put(`${baseUrl}/ticket/${ticketId}`)
     .set('Authorization', `Bearer ${jwt}`)
     .send(ticket)
-    .then(response => {
+    .then((response) => {
       const action = updateTicketSuccess(response.body);
       dispatch(action);
     })
@@ -89,18 +92,18 @@ export const updateTicket = (ticketId, ticket) => (dispatch, getState) => {
     .catch(console.error);
 };
 
-export const deleteTicketSuccess = ticketId => {
+export const deleteTicketSuccess = (ticketId) => {
   return {
     type: 'DELETE_TICKET',
-    payload: ticketId
+    payload: ticketId,
   };
 };
 
-export const deleteTicket = ticketId => (dispatch, _getState) => {
+export const deleteTicket = (ticketId) => (dispatch, _getState) => {
   console.log('delete', ticketId);
   request
     .delete(`${baseUrl}/ticket/${ticketId}`)
-    .then(response => {
+    .then((response) => {
       console.log('deleteEvent response', response);
       dispatch(deleteTicketSuccess(response.body));
     })

@@ -1,20 +1,20 @@
 import request from 'superagent';
 export const LOGIN = 'LOGIN';
 
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'http://localhost:4001';
 
 function loginSuccess(user) {
   return {
     type: LOGIN,
-    payload: user
+    payload: user,
   };
 }
 
-export const signup = (username, email, password) => dispatch => {
+export const signup = (username, email, password) => (dispatch) => {
   request
     .post(`${baseUrl}/user`)
     .send({ username, email, password })
-    .then(response => {
+    .then((response) => {
       const action = loginSuccess(response.text);
       dispatch(action);
     })
