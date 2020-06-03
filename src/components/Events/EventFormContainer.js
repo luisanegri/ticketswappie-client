@@ -8,31 +8,28 @@ export class EventFormContainer extends Component {
     name: '',
     description: '',
     start_date: '',
-    end_date: '',
-    image: ''
+    image: '',
   };
 
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.createEvent(
       this.state.name,
       this.state.description,
       this.state.start_date,
-      this.state.end_date,
       this.state.image
     );
     this.setState({
       name: '',
       description: '',
       start_date: '',
-      end_date: '',
-      image: ''
+      image: '',
     });
   };
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -50,7 +47,7 @@ export class EventFormContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return { user: state.users };
 };
 const mapDispatchToProps = { createEvent };

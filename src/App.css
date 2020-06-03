@@ -27,12 +27,12 @@ body {
   margin-bottom: 50px;
 }
 
-.event-list a:hover {
+/* .event-list a:hover {
   text-decoration: none;
   color: black;
-}
+} */
 
-.event-list a {
+/* .event-list a {
   color: black !important;
 }
 .event-list a,
@@ -42,9 +42,9 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   font-family: 'montserrat';
-}
+} */
 
-.event-list .card-body {
+/* .event-list .card-body {
   background: rgba(0, 107, 166, 0.09);
   min-height: 100px;
   max-height: 100px;
@@ -52,9 +52,9 @@ body {
   padding: 29px 38px;
   width: 335px;
   box-shadow: 0 8px 10px -6px #ccc;
-}
+} */
 
-.event-list .row-btn {
+/* .event-list .row-btn {
   margin-top: 30px;
 }
 
@@ -62,7 +62,7 @@ body {
   min-height: 172px;
   max-height: 172px;
   border: none;
-}
+} */
 
 .wrapper h1 {
   margin-bottom: 50px;
@@ -314,11 +314,11 @@ body {
   width: 51%;
 }
 
-.event-list .row-btn {
+/* .event-list .row-btn {
   margin: 0 auto;
   width: 52%;
   margin-top: 40px;
-}
+} */
 
 .risk {
   float: right;
@@ -358,4 +358,89 @@ body {
 
 .row-home-btn a:first-child {
   margin-right: 20px;
+}
+
+/* event list */
+
+#event-list a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#event-list a {
+  color: black !important;
+}
+
+#event-list a,
+.ticket-list a {
+  color: white;
+  font-size: 9.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'montserrat';
+}
+
+#event-list .row-btn {
+  margin-top: 30px;
+}
+
+#event-list .card {
+  flex-direction: row;
+  border: none;
+  border-radius: 0;
+  width: 500px;
+  padding: 16px;
+  background: #f8f7fa;
+}
+
+#event-list .card:hover {
+  box-shadow: 0 7px 6px -4px #777;
+}
+
+#event-list .cards-col {
+  margin-bottom: 30px;
+}
+
+#event-list .card-col-right {
+  padding-left: 0;
+}
+
+.card-text-wrapper {
+  padding: 10px;
+}
+
+.card-text-wrapper .card-text {
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+  width: 210px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-text-wrapper .card-text:first-child {
+  text-transform: lowercase;
+}
+
+.card-text-wrapper .card-text:nth-child(3),
+.card-text-wrapper .card-text:nth-child(4) {
+  font-weight: 100;
+}
+
+.card-text-wrapper .card-text:first-child {
+  color: #ffc104;
+}
+
+@media (max-width: 768px) {
+  #event-list .card {
+    margin: 0 auto;
+    width: 300px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  #event-list .card {
+    width: 350px;
+  }
 }

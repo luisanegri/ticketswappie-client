@@ -51,16 +51,6 @@ export default function EventForm(props) {
                 onChange={props.onChange}
               />
             </Form.Group>
-            <Form.Group as={Col} md="3" controlId="validationFormik04">
-              <Form.Label>End date</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="End date"
-                name="end_date"
-                value={props.value.end_date}
-                onChange={props.onChange}
-              />
-            </Form.Group>
           </Form.Row>
           <Button type="submit">Create Event</Button>
         </Form>
