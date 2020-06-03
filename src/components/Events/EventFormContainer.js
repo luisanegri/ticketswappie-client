@@ -9,6 +9,8 @@ export class EventFormContainer extends Component {
     description: '',
     start_date: '',
     image: '',
+    location: '',
+    price: '',
   };
 
   onSubmit = (event) => {
@@ -17,13 +19,17 @@ export class EventFormContainer extends Component {
       this.state.name,
       this.state.description,
       this.state.start_date,
-      this.state.image
+      this.state.image,
+      this.state.location,
+      this.state.price
     );
     this.setState({
       name: '',
       description: '',
       start_date: '',
       image: '',
+      location: '',
+      price: '',
     });
   };
 

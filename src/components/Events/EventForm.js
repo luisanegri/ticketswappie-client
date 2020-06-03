@@ -18,6 +18,28 @@ export default function EventForm(props) {
               name="name"
             />
           </Form.Group>
+          <Form.Row>
+            <Form.Group as={Col} md="6" controlId="validationFormik04">
+              <Form.Label>Price</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Price"
+                name="price"
+                value={props.value.price}
+                onChange={props.onChange}
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="6" controlId="validationFormik04">
+              <Form.Label>Start date</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Start date"
+                name="start_date"
+                value={props.value.start_date}
+                onChange={props.onChange}
+              />
+            </Form.Group>
+          </Form.Row>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -40,18 +62,16 @@ export default function EventForm(props) {
               name="image"
             />
           </Form.Group>
-          <Form.Row>
-            <Form.Group as={Col} md="3" controlId="validationFormik04">
-              <Form.Label>Start date</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Start date"
-                name="start_date"
-                value={props.value.start_date}
-                onChange={props.onChange}
-              />
-            </Form.Group>
-          </Form.Row>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Location</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Location"
+              onChange={props.onChange}
+              value={props.value.location}
+              name="location"
+            />
+          </Form.Group>
           <Button type="submit">Create Event</Button>
         </Form>
       </div>

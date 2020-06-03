@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 export default function EventList(props) {
-  console.log('props events', props);
   const empty = !props.events.length;
   if (empty) {
     return <p className="info-message">No events</p>;
@@ -24,12 +23,11 @@ export default function EventList(props) {
                       <Card.Body>
                         <div className="card-text-wrapper">
                           <Card.Text>
-                            <span>{event.start_date} at </span>
-                            <span>{event.location}</span>
+                            <span>{event.image}</span>
                           </Card.Text>
                           <Card.Text>{event.name}</Card.Text>
-                          <Card.Text>{event.price}</Card.Text>
-                          <Card.Text>Price €{event.time}</Card.Text>
+                          <Card.Text>{event.location}</Card.Text>
+                          <Card.Text>€{event.price}</Card.Text>
                         </div>
                       </Card.Body>
                     </Col>

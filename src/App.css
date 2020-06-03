@@ -405,8 +405,24 @@ body {
   padding-left: 0;
 }
 
+#event-list .card-img-top {
+  max-height: 130px;
+  min-height: 130px;
+  width: 100%;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
 .card-text-wrapper {
   padding: 10px;
+}
+
+#event-list .card-body {
+  padding: 0;
 }
 
 .card-text-wrapper .card-text {
