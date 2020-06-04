@@ -388,7 +388,7 @@ body {
   flex-direction: row;
   border: none;
   border-radius: 0;
-  width: 500px;
+  width: 450px;
   padding: 16px;
   background: #f8f7fa;
 }
@@ -399,10 +399,6 @@ body {
 
 #event-list .cards-col {
   margin-bottom: 30px;
-}
-
-#event-list .card-col-right {
-  padding-left: 0;
 }
 
 #event-list .card-img-top {
@@ -418,7 +414,11 @@ body {
 }
 
 .card-text-wrapper {
-  padding: 10px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #event-list .card-body {

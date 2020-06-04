@@ -27,7 +27,7 @@ export default function EventList(props) {
                           </Card.Text>
                           <Card.Text>{event.name}</Card.Text>
                           <Card.Text>{event.location}</Card.Text>
-                          <Card.Text>€{event.price}</Card.Text>
+                          {/* <Card.Text>€{event.price}</Card.Text> */}
                         </div>
                       </Card.Body>
                     </Col>

@@ -6,6 +6,7 @@ import { readTicket } from '../../actions/tickets';
 import { createComment, readComments } from '../../actions/comments';
 import { Container } from 'react-bootstrap';
 import EditTicketContainer from './EditTicketContainer';
+import TicketModal from './TicketModal';
 
 export class TicketDetailContainer extends Component {
   state = {
@@ -48,6 +49,11 @@ export class TicketDetailContainer extends Component {
               ticket={this.props.ticket}
               ticketId={this.props.match.params.ticketId}
             />
+            // <TicketModal
+            //   onChange={this.onChange}
+            //   onSubmit={this.onSubmit}
+            //   values={this.state}
+            // />
           )}
 
           <CommentForm

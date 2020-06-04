@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import '../../App.css';
-import EditTicketContainer from './EditTicketContainer';
 
 export default function TicketDetail(props) {
   console.log('ticket detail props', props);
