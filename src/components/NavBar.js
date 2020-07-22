@@ -8,7 +8,7 @@ export default function NavBar() {
     <div className="navigation">
       <Navbar collapseOnSelect expand="lg" className="bg" variant="dark">
         <Link to="/">
-          <Navbar.Brand>TicketSwap</Navbar.Brand>
+          <Navbar.Brand>TicketSwappie</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

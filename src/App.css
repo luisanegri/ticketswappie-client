@@ -12,7 +12,7 @@ red: #FF5E5B
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Montserrat:400,500,600,700|Roboto:400,500,700|Anton&display=swap');
 
 body,
-html {
+html, #root {
   margin: 0;
   height: 100%;
 }
@@ -27,43 +27,6 @@ body {
   margin-bottom: 50px;
 }
 
-/* .event-list a:hover {
-  text-decoration: none;
-  color: black;
-} */
-
-/* .event-list a {
-  color: black !important;
-}
-.event-list a,
-.ticket-list a {
-  color: white;
-  font-size: 9.8px;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-family: 'montserrat';
-} */
-
-/* .event-list .card-body {
-  background: rgba(0, 107, 166, 0.09);
-  min-height: 100px;
-  max-height: 100px;
-  border-radius: 29px;
-  padding: 29px 38px;
-  width: 335px;
-  box-shadow: 0 8px 10px -6px #ccc;
-} */
-
-/* .event-list .row-btn {
-  margin-top: 30px;
-}
-
-.event-list .card {
-  min-height: 172px;
-  max-height: 172px;
-  border: none;
-} */
-
 .wrapper h1 {
   margin-bottom: 50px;
   text-transform: uppercase;
@@ -73,12 +36,13 @@ body {
 }
 
 .navigation .bg {
-  background-color: #1740da;
+  background-color: #12043e;
 }
 
 .navigation .navbar-brand {
   font-family: 'Anton', sans-serif !important;
   letter-spacing: 1px;
+  color: #fafafa!important
 }
 
 .navigation .nav-link a {
@@ -265,12 +229,9 @@ body {
   font-family: 'montserrat';
   font-size: 13px;
   font-weight: 600;
-  background-image: linear-gradient(
-    to right,
-    #1740da 0%,
-    #47d5b8 68%,
-    #f03a47 100%
-  );
+  background: #1ec7c5;
+  border-radius: 39px;
+  margin: 10px;
   border: none;
 }
 .btn-grad:hover {
@@ -358,6 +319,13 @@ body {
 
 .row-home-btn a:first-child {
   margin-right: 20px;
+}
+
+.row-home-btn h5 {
+  color: white;
+    font-family: 'Roboto';
+    margin-bottom: 35px;
+    font-size: 20px;
 }
 
 /* event list */
