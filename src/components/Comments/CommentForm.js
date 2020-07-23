@@ -3,7 +3,7 @@ import '../../App.css';
 import { Form, Button, Col } from 'react-bootstrap';
 
 export default function CommentForm(props) {
-  console.log('comment form ', props);
+  console.log('comment form user', props);
   return (
     <div className="wrapper comment-form">
       <Form onSubmit={props.onSubmit}>
@@ -19,9 +19,10 @@ export default function CommentForm(props) {
         </Form.Group>
         <Button type="submit">Add</Button>
       </Form>
+
       {props.comments.map((comment) => (
         <div key={comment.id} className="comment-block">
-          <span>{comment.email}: </span>
+          <span>{comment.username}: </span>
           <span>{comment.comment}</span>
         </div>
       ))}
