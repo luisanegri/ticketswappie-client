@@ -5,7 +5,7 @@ import CommentForm from '../Comments/CommentForm';
 import { readTicket } from '../../actions/tickets';
 import { createComment, readComments } from '../../actions/comments';
 import { Container } from 'react-bootstrap';
-import EditTicketContainer from './EditTicketContainer';
+// import EditTicketContainer from './EditTicketContainer';
 
 export class TicketDetailContainer extends Component {
   state = {
@@ -43,12 +43,12 @@ export class TicketDetailContainer extends Component {
             comments={this.props.comments}
             event={this.props.event}
           />
-          {this.props.user.id === this.props.ticket.userId && (
+          {/* {this.props.user.id === this.props.ticket.userId && (
             <EditTicketContainer
               ticket={this.props.ticket}
               ticketId={this.props.match.params.ticketId}
             />
-          )}
+          )} */}
 
           <CommentForm
             onChange={this.onChange}
@@ -64,7 +64,6 @@ export class TicketDetailContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state ticket', state);
   return {
     ticket: state.tickets,
     comments: state.comments,

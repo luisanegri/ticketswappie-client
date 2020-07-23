@@ -7,13 +7,7 @@ import { Link } from 'react-router-dom';
 class SignUp extends React.Component {
   state = { email: '', password: '', username: '' };
 
-  // componentDidUpdate() {
-  //   if (this.props.user.length !== 0) {
-  //     this.props.history.push('/login');
-  //   }
-  // }
-
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.signup(
       this.state.username,
@@ -21,11 +15,12 @@ class SignUp extends React.Component {
       this.state.password
     );
     this.setState({ email: '', password: '', username: '' });
+    this.props.history.push('/login');
   };
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 

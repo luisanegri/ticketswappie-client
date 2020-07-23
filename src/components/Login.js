@@ -7,16 +7,17 @@ import { Redirect } from 'react-router-dom';
 class Login extends React.Component {
   state = { email: '', password: '' };
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.login(this.state.email, this.state.password);
     this.setState({ email: '', password: '' });
+    this.props.history.push('/event');
   };
 
   componentDidUpdate() {
@@ -61,8 +62,8 @@ class Login extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.user
+const mapStateToProps = (state) => ({
+  user: state.user,
 });
 
 const mapDispatchToProps = { login };
