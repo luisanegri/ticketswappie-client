@@ -5,7 +5,6 @@ import CommentForm from '../Comments/CommentForm';
 import { readTicket } from '../../actions/tickets';
 import { createComment, readComments } from '../../actions/comments';
 import { Container } from 'react-bootstrap';
-// import EditTicketContainer from './EditTicketContainer';
 
 export class TicketDetailContainer extends Component {
   state = {

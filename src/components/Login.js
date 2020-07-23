@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/login';
 import { Button, Form, Container } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   state = { email: '', password: '' };
@@ -29,7 +28,6 @@ class Login extends React.Component {
   }
 
   render() {
-    // if (this.props.user) return <Redirect to="/event" />;
     return (
       <Container>
         <div className="wrapper signup-wrapper">

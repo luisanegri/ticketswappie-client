@@ -15,11 +15,8 @@ function createCommentSuccess(comment, ticketId) {
 export const createComment = (comment, ticketId) => (dispatch, getState) => {
   const state = getState();
   const jwt = state.users.jwt;
-  // // get user id and send to back
   const userId = state.users.id;
   const username = state.users.username;
-  console.log('userId', userId);
-  console.log('email', username);
 
   request
     .post(`${baseUrl}/ticket/${ticketId}/comment`)
@@ -27,7 +24,6 @@ export const createComment = (comment, ticketId) => (dispatch, getState) => {
     .send({ comment, username, userId })
     .then((response) => {
       const action = createCommentSuccess(response.body);
-      console.log('action', action);
       dispatch(action);
     })
     .catch(console.error);

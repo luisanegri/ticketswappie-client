@@ -1,9 +1,8 @@
 import React from 'react';
 import '../../App.css';
-import { Form, Button, Col } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 export default function CommentForm(props) {
-  console.log('comment form user', props);
   return (
     <div className="wrapper comment-form">
       <Form onSubmit={props.onSubmit}>

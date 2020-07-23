@@ -23,14 +23,13 @@ export const createTicket = (price, description, image, eventId) => (
   const jwt = state.users.jwt;
   const userId = state.users.id;
   const username = state.users.username;
-  console.log('username', username);
+
   request
     .post(`${baseUrl}/event/${eventId}/ticket`)
     .set('Authorization', `Bearer ${jwt}`)
     .send({ price, description, image, userId, username })
     .then((response) => {
       const action = createTicketSuccess(response.body);
-      console.log('ticket action', action);
       dispatch(action);
     })
     .catch(console.error);
@@ -48,7 +47,6 @@ export const readTickets = (eventId) => (dispatch, _getState) => {
     .get(`${baseUrl}/event/${eventId}/ticket`)
     .then((response) => {
       const action = readTicketsSuccess(response.body);
-      console.log('actiom', action);
       dispatch(action);
     })
     .catch(console.error);
@@ -63,9 +61,7 @@ export const readTicket = (ticketId) => (dispatch, _getState) => {
   request
     .get(`${baseUrl}/ticket/${ticketId}`)
     .then((response) => {
-      console.log('response ticket', response);
       const action = readTicketSuccess(response.body);
-      console.log('ticket response', action);
       dispatch(action);
     })
     .catch(console.error);
@@ -100,11 +96,9 @@ export const deleteTicketSuccess = (ticketId) => {
 };
 
 export const deleteTicket = (ticketId) => (dispatch, _getState) => {
-  console.log('delete', ticketId);
   request
     .delete(`${baseUrl}/ticket/${ticketId}`)
     .then((response) => {
-      console.log('deleteEvent response', response);
       dispatch(deleteTicketSuccess(response.body));
     })
     .catch(console.error);
