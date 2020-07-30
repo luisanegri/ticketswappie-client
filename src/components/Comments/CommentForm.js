@@ -7,7 +7,6 @@ export default function CommentForm(props) {
     <div className="wrapper comment-form">
       <Form onSubmit={props.onSubmit}>
         <Form.Group controlId="">
-          <Form.Label>Comment</Form.Label>
           <Form.Control
             type="text"
             placeholder="Comment"
@@ -16,7 +15,10 @@ export default function CommentForm(props) {
             name="comment"
           />
         </Form.Group>
-        <Button type="submit">Add</Button>
+
+        <Button type="submit">
+          <i class="fa fa-paper-plane"></i>
+        </Button>
       </Form>
 
       {props.comments.map((comment) => (

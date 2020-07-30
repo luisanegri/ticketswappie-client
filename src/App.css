@@ -12,7 +12,8 @@ red: #FF5E5B
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Montserrat:400,500,600,700|Roboto:400,500,700|Anton&display=swap');
 
 body,
-html, #root {
+html,
+#root {
   margin: 0;
   height: 100%;
 }
@@ -25,6 +26,14 @@ body {
 .container .wrapper {
   margin-top: 50px;
   margin-bottom: 50px;
+  width: 100%;
+}
+
+.container .wrapper .comment-form,
+.container .wrapper .ticket-detail {
+  width: 700px;
+  display: block;
+  margin: 30px auto;
 }
 
 .wrapper h1 {
@@ -42,7 +51,7 @@ body {
 .navigation .navbar-brand {
   font-family: 'Anton', sans-serif !important;
   letter-spacing: 1px;
-  color: #fafafa!important
+  color: #fafafa !important;
 }
 
 .navigation .nav-link a {
@@ -54,19 +63,28 @@ body {
   text-decoration: none;
 }
 
-.event-detail img {
+.ticket-detail img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  object-fit: cover;
+
+  height: 250px;
   width: 100%;
-  min-height: 400px;
-  max-height: 400px;
 }
 
-.event-detail .col {
+.ticket-detail {
+  margin-top: 30px;
+}
+
+/* .event-detail .col {
   padding: 0;
-}
+} */
 
-.event-detail .col-right {
+/* .event-detail .col-right {
   background: #e7f1f6;
-}
+} */
 
 .wrapper button {
   margin: 0 auto;
@@ -92,7 +110,8 @@ body {
 }
 
 .hold-info {
-  padding: 35px;
+  margin: auto;
+  width: 100%;
 }
 
 .ticket-list .table {
@@ -150,14 +169,18 @@ body {
 }
 
 .comment-form input {
-  width: 40%;
   display: inline;
-  margin: 0 10px;
+  height: 65px;
 }
 
 .comment-form .btn {
-  display: inline;
-  margin-top: -3px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  right: 12px;
+  top: 30px;
 }
 
 .risk-green {
@@ -266,14 +289,14 @@ body {
   text-decoration: underline;
 }
 
-.event-detail button a {
+/* .event-detail button a {
   color: white;
 }
 
 .event-detail .row-btn {
   margin: 0 auto;
   width: 51%;
-}
+} */
 
 /* .event-list .row-btn {
   margin: 0 auto;
@@ -295,17 +318,19 @@ body {
 }
 
 .comment-block {
-  margin-top: 70px !important;
   background: #e7f1f6;
-  padding: 50px;
-  width: 700px;
-  margin: 0 auto;
+  padding: 16px 40px;
+  margin: 10px auto;
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 .comment-form form {
   text-align: center;
   margin: 0 auto;
   display: block;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .btn-delete {
@@ -323,9 +348,9 @@ body {
 
 .row-home-btn h5 {
   color: white;
-    font-family: 'Roboto';
-    margin-bottom: 35px;
-    font-size: 20px;
+  font-family: 'Roboto';
+  margin-bottom: 35px;
+  font-size: 20px;
 }
 
 /* event list */
@@ -414,6 +439,47 @@ body {
 
 .card-text-wrapper .card-text:first-child {
   color: #ffc104;
+}
+
+.ticketCard {
+  width: 730px;
+  margin: auto;
+  padding: 10px;
+  background: #e7f1f5;
+  padding: 35px 55px 25px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.tick-btns-action {
+  border-top: 1px solid #dde2e6;
+  margin-top: 15px;
+}
+
+.tick-btns-action button {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  background: #f03a47;
+  border-color: transparent;
+  padding: 9px 0px;
+  width: 100%;
+}
+
+.hold-info .info:nth-child(2) {
+  margin-top: 30px;
+}
+
+.btn-send-comment button {
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.wrapper.comment-form {
+  width: 730px;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
 }
 
 @media (max-width: 768px) {

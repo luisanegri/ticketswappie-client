@@ -67,11 +67,11 @@ export default function EventDetail(props) {
         </article>
       </Container>
 
-      <Container>
+      {/* <Container>
         <div className="wrapper event-detail">
           <Row></Row>
         </div>
-      </Container>
+      </Container> */}
     </React.Fragment>
   );
 }
