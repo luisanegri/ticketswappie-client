@@ -17,7 +17,14 @@ export default function EventList(props) {
                 <Card>
                   <Row>
                     <Col md={6}>
-                      <Card.Img variant="top" src={event.start_date} />
+                      <div
+                        style={{
+                          backgroundImage: `url(${event.start_date})`,
+                          backgroundSize: '100% 100%',
+                          height: '122px',
+                          width: '142px',
+                        }}
+                      ></div>
                     </Col>
                     <Col md={6} className="card-col-right">
                       <Card.Body>

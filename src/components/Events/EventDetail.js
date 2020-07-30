@@ -12,11 +12,19 @@ export default function EventDetail(props) {
       >
         <Row className="row-w row-badge-event">
           <Col md={8} className="col-left">
-            <img
+            <div
+              style={{
+                backgroundImage: `url(${props.event.start_date})`,
+                backgroundSize: '100% 100%',
+                height: '350px',
+                width: '100%',
+              }}
+            ></div>
+            {/* <img
               src={props.event.start_date}
               style={{ width: '100%', height: '350px' }}
               alt="Event"
-            />
+            /> */}
           </Col>
           <Col md={4} className="col-right">
             <p>{props.event.image}</p>
