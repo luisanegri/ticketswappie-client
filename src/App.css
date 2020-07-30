@@ -9,7 +9,7 @@ risk colours:
 red: #FF5E5B
 
 */
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Montserrat:400,500,600,700|Roboto:400,500,700|Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700|Coiny:400|Montserrat:400,500,600,700|Roboto:400,500,700|Anton&display=swap');
 
 body,
 html,
@@ -19,11 +19,11 @@ html,
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   background: #fafafa;
 }
 
-.container .wrapper {
+.container {
   margin-top: 50px;
   margin-bottom: 50px;
   width: 100%;
@@ -36,21 +36,23 @@ body {
   margin: 30px auto;
 }
 
-.wrapper h1 {
+.event-form h1,
+.ticket-form h1,
+.signup-wrapper h1,
+.event-list h1,
+.ticket-list h1 {
   margin-bottom: 50px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 20px;
-  text-align: center;
   font-family: 'montserrat';
 }
 
 .navigation .bg {
-  background-color: #12043e;
+  background-color: #5215fc;
 }
 
 .navigation .navbar-brand {
-  font-family: 'Anton', sans-serif !important;
-  letter-spacing: 1px;
+  font-family: 'Coiny', cursive !important;
   color: #fafafa !important;
 }
 
@@ -67,24 +69,14 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
   object-fit: cover;
-
-  height: 250px;
+  height: 200px;
   width: 100%;
 }
 
 .ticket-detail {
   margin-top: 30px;
 }
-
-/* .event-detail .col {
-  padding: 0;
-} */
-
-/* .event-detail .col-right {
-  background: #e7f1f6;
-} */
 
 .wrapper button {
   margin: 0 auto;
@@ -123,25 +115,14 @@ body {
   vertical-align: inherit;
 }
 
-#btn-ticket-detail,
-#btn-ticket-delete {
-  margin: inherit;
-  margin-top: 1px;
-  padding: 6px 11px 9px;
+.ticket-list .btn-ticket-detail {
+  border-radius: 50%;
+  padding: 1px 8px;
   float: right;
 }
 
-#btn-ticket-detail {
-  background: #1740da;
-}
-
-#btn-ticket-detail:hover {
-  background: #f03a47;
-}
-
-#btn-ticket-detail a:hover {
+.ticket-list .btn-ticket-detail:hover i {
   color: white;
-  text-decoration: none;
 }
 
 .event-form,
@@ -242,7 +223,7 @@ body {
   text-align: center;
 }
 
-.home-wrapper .btn-grad {
+.home-wrapper .home-btn {
   padding: 16px 20px;
   text-align: center;
   text-transform: uppercase;
@@ -289,21 +270,6 @@ body {
   text-decoration: underline;
 }
 
-/* .event-detail button a {
-  color: white;
-}
-
-.event-detail .row-btn {
-  margin: 0 auto;
-  width: 51%;
-} */
-
-/* .event-list .row-btn {
-  margin: 0 auto;
-  width: 52%;
-  margin-top: 40px;
-} */
-
 .risk {
   float: right;
 }
@@ -318,7 +284,7 @@ body {
 }
 
 .comment-block {
-  background: #e7f1f6;
+  background: #f3f0fb;
   padding: 16px 40px;
   margin: 10px auto;
   border: 1px solid transparent;
@@ -367,10 +333,7 @@ body {
 #event-list a,
 .ticket-list a {
   color: white;
-  font-size: 9.8px;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-family: 'montserrat';
+  font-size: 18px;
 }
 
 #event-list .row-btn {
@@ -379,11 +342,11 @@ body {
 
 #event-list .card {
   flex-direction: row;
-  border: none;
-  border-radius: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
   width: 500px;
   padding: 16px;
-  background: #f8f7fa;
+  background: #f3f0fb;
 }
 
 #event-list .card:hover {
@@ -438,14 +401,14 @@ body {
 }
 
 .card-text-wrapper .card-text:first-child {
-  color: #ffc104;
+  color: #5215fc;
 }
 
 .ticketCard {
   width: 730px;
   margin: auto;
   padding: 10px;
-  background: #e7f1f5;
+  background: #f3f0fb;
   padding: 35px 55px 25px;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -456,13 +419,12 @@ body {
   margin-top: 15px;
 }
 
-.tick-btns-action button {
+.tick-btns-action #btn-red {
   margin: 0 auto;
   display: block;
   margin-top: 20px;
-  background: #f03a47;
   border-color: transparent;
-  padding: 9px 0px;
+  padding: 6px 0px;
   width: 100%;
 }
 
@@ -480,6 +442,42 @@ body {
   display: block;
   margin: auto;
   margin-top: 60px;
+}
+
+#btn-green:hover {
+  background: #2fdaa1;
+  border-color: transparent;
+}
+
+#btn-green {
+  background: #4ee0af;
+  border-color: transparent;
+}
+
+#btn-red {
+  background: #f2545f;
+  border-color: transparent;
+}
+
+#btn-red:hover {
+  background: #f03a47;
+  border-color: transparent;
+}
+
+.row-badge-bottom #btn-green,
+.row-badge-bottom #btn-red {
+  width: 100%;
+}
+
+.btn-form {
+  width: 25%;
+  margin-top: 20px;
+}
+
+.btn-access {
+  display: block;
+  text-align: center;
+  margin: 20px auto 5px;
 }
 
 @media (max-width: 768px) {

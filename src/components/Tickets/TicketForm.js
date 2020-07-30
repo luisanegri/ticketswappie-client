@@ -5,8 +5,8 @@ import { Form, Button, Container } from 'react-bootstrap';
 export default function TicketForm(props) {
   return (
     <Container>
-      <div className="wrapper ticket-form">
-        <h1>Sell a ticket</h1>
+      <div className="ticket-form">
+        <h1>Ticket Information</h1>
         <Form onSubmit={props.onSubmit}>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Price</Form.Label>
@@ -40,7 +40,9 @@ export default function TicketForm(props) {
               name="image"
             />
           </Form.Group>
-          <Button type="submit">Create Ticket</Button>
+          <Button type="submit" id="btn-red" className="btn-form">
+            Sell
+          </Button>
         </Form>
       </div>
     </Container>

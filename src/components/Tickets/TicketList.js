@@ -10,8 +10,8 @@ export default function TicketList(props) {
   }
   return (
     <Container>
-      <div className="wrapper ticket-list">
-        <h1>Tickets available</h1>
+      <div className="ticket-list">
+        <h1 style={{ textAlign: 'center' }}>Tickets available</h1>
         <Row>
           <Table responsive>
             <thead>
@@ -24,21 +24,15 @@ export default function TicketList(props) {
                 </th>
               </tr>
             </thead>
-            {props.tickets.map(ticket => (
+            {props.tickets.map((ticket) => (
               <tbody>
                 <tr>
                   <td>€ {ticket.price}</td>
-                  {/* <td className="btn-delete">
-                    <Button
-                      onClick={() => props.deleteTicket(ticket.id)}
-                      id="btn-ticket-delete"
-                    >
-                      Delete
-                    </Button>
-                  </td> */}
                   <td>
-                    <Button id="btn-ticket-detail">
-                      <Link to={`/ticket/${ticket.id}`}>Details</Link>
+                    <Button className="btn-ticket-detail" id="btn-red">
+                      <Link to={`/ticket/${ticket.id}`}>
+                        <i class="fa fa-eye"></i>
+                      </Link>
                     </Button>
                   </td>
                 </tr>

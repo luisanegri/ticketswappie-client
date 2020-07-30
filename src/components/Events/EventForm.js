@@ -5,8 +5,8 @@ import { Form, Button, Col, Container } from 'react-bootstrap';
 export default function EventForm(props) {
   return (
     <Container>
-      <div className="wrapper event-form">
-        <h1>Create an Event</h1>
+      <div className="event-form">
+        <h1>Event Information</h1>
         <Form onSubmit={props.onSubmit}>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Event name</Form.Label>
@@ -72,7 +72,9 @@ export default function EventForm(props) {
               name="location"
             />
           </Form.Group>
-          <Button type="submit">Create Event</Button>
+          <Button type="submit" id="btn-red" className="btn-form">
+            Create Event
+          </Button>
         </Form>
       </div>
     </Container>

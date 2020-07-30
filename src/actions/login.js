@@ -4,7 +4,6 @@ export const LOGIN = 'LOGIN';
 const baseUrl = 'http://localhost:4001';
 
 function loginSuccess(user) {
-  console.log(user, 'user');
   return {
     type: LOGIN,
     payload: user,

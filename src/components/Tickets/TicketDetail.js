@@ -3,7 +3,6 @@ import { Row, Col, Button } from 'react-bootstrap';
 import '../../App.css';
 
 export default function TicketDetail(props) {
-  console.log('ticket props', props);
   return (
     <div className="ticket-detail">
       <div className="ticketCard">
@@ -13,7 +12,9 @@ export default function TicketDetail(props) {
           </Col>
           <Col className="col-right">
             <div className="hold-info">
-              <h4 className="info">{props.event.name}Test Name</h4>
+              <h4 className="info" style={{ textTransform: 'capitalize' }}>
+                {props.event.name}
+              </h4>
               <p className="info">Seller: {props.ticket.username}</p>
               <p className="info">Price: €{props.ticket.price}</p>
               <p className="info">Description: {props.ticket.description}</p>
@@ -34,9 +35,9 @@ export default function TicketDetail(props) {
           </Col>
         </Row>
         <Row className="tick-btns-action">
-          <Col>{/* <Button>comment</Button> */}</Col>
+          <Col></Col>
           <Col>
-            <Button>Buy</Button>
+            <Button id="btn-red">Buy</Button>
           </Col>
         </Row>
       </div>

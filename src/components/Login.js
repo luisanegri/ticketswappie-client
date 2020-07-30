@@ -30,9 +30,9 @@ class Login extends React.Component {
   render() {
     return (
       <Container>
-        <div className="wrapper signup-wrapper">
+        <div className=" signup-wrapper">
           <Form onSubmit={this.onSubmit}>
-            <h1>Login</h1>
+            <h1 style={{ textAlign: 'center' }}>Login</h1>
             <Form.Row>
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -51,7 +51,13 @@ class Login extends React.Component {
                 type="password"
               />
 
-              <Button type="submit">Login</Button>
+              <Button
+                type="submit"
+                id="btn-green"
+                className="btn-form btn-access"
+              >
+                Login
+              </Button>
             </Form.Row>
           </Form>
         </div>

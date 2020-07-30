@@ -23,6 +23,7 @@ export const createEvent = (
   const state = getState();
   const jwt = state.users.jwt;
   const userId = state.users.id;
+
   request
     .post(`${baseUrl}/event`)
     .set('Authorization', `Bearer ${jwt}`)

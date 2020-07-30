@@ -16,7 +16,7 @@ export default function CommentForm(props) {
           />
         </Form.Group>
 
-        <Button type="submit">
+        <Button type="submit" id="btn-green">
           <i class="fa fa-paper-plane"></i>
         </Button>
       </Form>

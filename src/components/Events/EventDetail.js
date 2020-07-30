@@ -7,7 +7,7 @@ export default function EventDetail(props) {
     <React.Fragment>
       <Container
         fluid
-        style={{ backgroundColor: '#dbdae2', height: '400px' }}
+        style={{ backgroundColor: '#F3F0FB', height: '400px' }}
         className="event-info"
       >
         <Row className="row-w row-badge-event">
@@ -20,33 +20,21 @@ export default function EventDetail(props) {
           </Col>
           <Col md={4} className="col-right">
             <p>{props.event.image}</p>
-            <p>{props.event.name}</p>
+            <p style={{ textTransform: 'capitalize' }}>{props.event.name}</p>
             <p>€{props.event.price}</p>
           </Col>
         </Row>
         <Row className="row-w row-badge-bottom">
           <Col md={8} className="col-left"></Col>
           <Col md={2}>
-            <Button
-              style={{
-                width: '100%',
-                background: '#4ee0b0',
-                borderColor: 'transparent',
-              }}
-            >
+            <Button id="btn-red">
               <Link to={`/event/${props.event.id}/ticket/create`}>
                 Sell ticket
               </Link>
             </Button>
           </Col>
           <Col md={2}>
-            <Button
-              style={{
-                width: '100%',
-                background: '#4ee0b0',
-                borderColor: 'transparent',
-              }}
-            >
+            <Button id="btn-green">
               <Link to={`/event/${props.event.id}/ticket`}>View tickets</Link>
             </Button>
           </Col>
@@ -66,12 +54,6 @@ export default function EventDetail(props) {
           </Row>
         </article>
       </Container>
-
-      {/* <Container>
-        <div className="wrapper event-detail">
-          <Row></Row>
-        </div>
-      </Container> */}
     </React.Fragment>
   );
 }

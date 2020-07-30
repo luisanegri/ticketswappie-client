@@ -27,8 +27,8 @@ class SignUp extends React.Component {
   render() {
     return (
       <Container>
-        <div className="wrapper signup-wrapper">
-          <h1>Welcome!</h1>
+        <div className="signup-wrapper">
+          <h1 style={{ textAlign: 'center' }}>Welcome!</h1>
           <p>Before you can create an event, you have to register yourself.</p>
           <Form onSubmit={this.onSubmit}>
             <Form.Row>
@@ -55,7 +55,13 @@ class SignUp extends React.Component {
                 placeholder="password"
                 type="password"
               />
-              <Button type="submit">Sign Up</Button>
+              <Button
+                type="submit"
+                id="btn-green"
+                className="btn-form btn-access"
+              >
+                Sign Up
+              </Button>
             </Form.Row>
           </Form>
           <Link to="/login">Already have an account?</Link>

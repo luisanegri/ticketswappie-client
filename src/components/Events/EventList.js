@@ -9,7 +9,7 @@ export default function EventList(props) {
   return (
     <Container>
       <div className="wrapper event-list" id="event-list">
-        <h1>Events</h1>
+        <h1>Events list</h1>
         <Row>
           {props.events.map((event) => (
             <Col md={6} className="cards-col">
