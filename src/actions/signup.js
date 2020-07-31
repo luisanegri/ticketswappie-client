@@ -1,7 +1,7 @@
 import request from 'superagent';
-export const LOGIN = 'LOGIN';
+import { baseUrl } from './urls';
 
-const baseUrl = 'http://localhost:4001';
+export const LOGIN = 'LOGIN';
 
 function loginSuccess(user) {
   return {

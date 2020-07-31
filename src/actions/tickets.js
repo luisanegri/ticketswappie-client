@@ -5,7 +5,7 @@ export const CREATE_TICKET = 'CREATE_TICKET';
 export const UPDATE_TICKET = 'UPDATE_TICKET';
 export const DELETE_TICKET = 'DELETE_TICKET';
 
-const baseUrl = 'http://localhost:4001';
+import { baseUrl } from './urls';
 
 function createTicketSuccess(ticket, eventId) {
   return {

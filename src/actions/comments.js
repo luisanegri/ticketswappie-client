@@ -2,7 +2,7 @@ import request from 'superagent';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
 export const READ_COMMENTS = 'READ_COMMENTS';
 
-const baseUrl = 'http://localhost:4001';
+import { baseUrl } from './urls';
 
 function createCommentSuccess(comment, ticketId) {
   return {
