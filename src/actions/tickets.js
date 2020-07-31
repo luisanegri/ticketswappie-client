@@ -1,11 +1,11 @@
 import request from 'superagent';
+import { baseUrl } from './urls';
+
 export const READ_TICKETS = 'READ_TICKETS';
 export const READ_TICKET = 'READ_TICKET';
 export const CREATE_TICKET = 'CREATE_TICKET';
 export const UPDATE_TICKET = 'UPDATE_TICKET';
 export const DELETE_TICKET = 'DELETE_TICKET';
-
-import { baseUrl } from './urls';
 
 function createTicketSuccess(ticket, eventId) {
   return {

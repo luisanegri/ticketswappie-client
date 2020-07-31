@@ -1,8 +1,8 @@
 import request from 'superagent';
+import { baseUrl } from './urls';
+
 export const CREATE_COMMENT = 'CREATE_COMMENT';
 export const READ_COMMENTS = 'READ_COMMENTS';
-
-import { baseUrl } from './urls';
 
 function createCommentSuccess(comment, ticketId) {
   return {

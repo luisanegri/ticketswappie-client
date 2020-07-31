@@ -1,9 +1,9 @@
 import request from 'superagent';
+import { baseUrl } from './urls';
+
 export const CREATE_EVENT = 'CREATE_EVENT';
 export const READ_EVENTS = 'READ_EVENTS';
 export const READ_EVENT = 'READ_EVENT';
-
-import { baseUrl } from './urls';
 
 function createEventSuccess(event) {
   return {
