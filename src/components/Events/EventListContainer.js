@@ -21,14 +21,17 @@ export class EventListContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+  console.log('state', state.events);
   return {
-    events: state.events,
+    events: state.events.eventsList,
     user: state.users,
-    tickets: state.tickets
+    tickets: state.tickets,
   };
 };
 
-const mapDispatchToProps = { readEvents };
+const mapDispatchToProps = (dispatch) => ({
+  readEvents: (events) => dispatch(readEvents(events)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventListContainer);

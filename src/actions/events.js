@@ -2,7 +2,9 @@ import request from 'superagent';
 import { baseUrl } from './urls';
 
 export const CREATE_EVENT = 'CREATE_EVENT';
-export const READ_EVENTS = 'READ_EVENTS';
+export const READ_EVENTS_STARTED = 'READ_EVENTS_STARTED';
+export const READ_EVENTS_SUCCESS = 'READ_EVENTS_SUCCESS';
+export const READ_EVENTS_FAILURE = 'READ_EVENTS_FAILURE';
 export const READ_EVENT = 'READ_EVENT';
 
 function createEventSuccess(event) {
@@ -35,21 +37,38 @@ export const createEvent = (
     .catch(console.error);
 };
 
-function readEventsSuccess(events) {
+const readEventsStarted = () => ({
+  type: READ_EVENTS_STARTED,
+});
+
+const readEventsSuccess = (events) => {
+  console.log('events on action readSuccess', events);
   return {
-    type: READ_EVENT,
+    type: READ_EVENTS_SUCCESS,
     payload: events,
   };
-}
+};
 
-export const readEvents = () => (dispatch, _getState) => {
+console.log('read', readEventsSuccess());
+
+const readEventsFailure = (error) => ({
+  type: READ_EVENTS_FAILURE,
+  payload: error,
+});
+
+export const readEvents = () => (dispatch, getState) => {
+  dispatch(readEventsStarted());
+  console.log('get', getState());
+
   request
     .get(`${baseUrl}/event`)
     .then((response) => {
-      const action = readEventsSuccess(response.body);
-      dispatch(action);
+      dispatch(readEventsSuccess(response.body));
+      console.log('action', readEventsSuccess(response.body));
     })
-    .catch(console.error);
+    .catch((err) => {
+      dispatch(readEventsFailure(err));
+    });
 };
 
 export const readEventSuccess = (event) => ({

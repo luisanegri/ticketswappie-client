@@ -1,11 +1,38 @@
-export default function(state = [], action = {}) {
+const initialState = {
+  loading: false,
+  eventsList: [],
+  error: null,
+};
+
+export default function (state = initialState, action) {
   switch (action.type) {
     case 'CREATE_EVENT':
       return action.payload;
-    case 'READ_EVENTS':
-      return [...state, action.payload];
+    case 'READ_EVENTS_STARTED':
+      console.log('reducer 1', state);
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'READ_EVENTS_SUCCESS':
+      console.log('reducer 2', action.payload);
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        eventsList: action.payload,
+      };
+    case 'READ_EVENTS_FAILURE':
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+      };
     case 'READ_EVENT':
-      return action.payload;
+      return {
+        ...state,
+        event: [...state.event, action.payload],
+      };
     default:
       return state;
   }

@@ -2,10 +2,11 @@ import React from 'react';
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 export default function EventList(props) {
-  const empty = !props.events.length;
-  if (empty) {
-    return <p className="info-message">No events</p>;
-  }
+  console.log('props', props);
+  // const empty = !props.events.length;
+  // if (empty) {
+  //   return <p className="info-message">No events</p>;
+  // }
   return (
     <Container>
       <div className="wrapper event-list" id="event-list">
@@ -14,6 +15,7 @@ export default function EventList(props) {
           {props.events.map((event) => (
             <Col md={6} className="cards-col">
               <Link to={`/event/${event.id}`}>
+                {console.log('event inside', event)}
                 <Card>
                   <Row>
                     <Col md={6}>
