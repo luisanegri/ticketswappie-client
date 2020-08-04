@@ -2,7 +2,8 @@ import React from 'react';
 import { Col, Row, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default function EventDetail(props) {
+export default function EventDetail({ event }) {
+  console.log('props', event);
   return (
     <React.Fragment>
       <Container
@@ -14,36 +15,29 @@ export default function EventDetail(props) {
           <Col md={8} className="col-left">
             <div
               style={{
-                backgroundImage: `url(${props.event.start_date})`,
+                backgroundImage: `url(${event.start_date})`,
                 backgroundSize: '100% 100%',
                 height: '350px',
                 width: '100%',
               }}
             ></div>
-            {/* <img
-              src={props.event.start_date}
-              style={{ width: '100%', height: '350px' }}
-              alt="Event"
-            /> */}
           </Col>
           <Col md={4} className="col-right">
-            <p>{props.event.image}</p>
-            <p style={{ textTransform: 'capitalize' }}>{props.event.name}</p>
-            <p>€{props.event.price}</p>
+            <p>{event.image}</p>
+            <p style={{ textTransform: 'capitalize' }}>{event.name}</p>
+            <p>€{event.price}</p>
           </Col>
         </Row>
         <Row className="row-w row-badge-bottom">
           <Col md={8} className="col-left"></Col>
           <Col md={2}>
             <Button id="btn-red">
-              <Link to={`/event/${props.event.id}/ticket/create`}>
-                Sell ticket
-              </Link>
+              <Link to={`/event/${event.id}/ticket/create`}>Sell ticket</Link>
             </Button>
           </Col>
           <Col md={2}>
             <Button id="btn-green">
-              <Link to={`/event/${props.event.id}/ticket`}>View tickets</Link>
+              <Link to={`/event/${event.id}/ticket`}>View tickets</Link>
             </Button>
           </Col>
         </Row>
@@ -51,13 +45,13 @@ export default function EventDetail(props) {
           <Row className="row-w row-content">
             <Col md={12} className="full">
               <h6>About this event</h6>
-              <p>{props.event.description}</p>
+              <p>{event.description}</p>
               <h6>Information</h6>
-              <p style={{ fontSize: '15px' }}>{props.event.name}</p>
+              <p style={{ fontSize: '15px' }}>{event.name}</p>
               <span> In </span>
-              <span>{props.event.location}</span>
+              <span>{event.location}</span>
               <span> on the </span>
-              <span>{props.event.image}</span>
+              <span>{event.image}</span>
             </Col>
           </Row>
         </article>

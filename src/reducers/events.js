@@ -1,6 +1,7 @@
 const initialState = {
   loading: false,
   eventsList: [],
+  event: {},
   error: null,
 };
 
@@ -31,7 +32,7 @@ export default function (state = initialState, action) {
     case 'READ_EVENT':
       return {
         ...state,
-        event: [...state.event, action.payload],
+        event: action.payload,
       };
     default:
       return state;

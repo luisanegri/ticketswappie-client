@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EventDetail from './EventDetail';
-import { readEvent } from '../../actions/events';
+import { readEvent } from '../../actions/event';
 
 export class EventDetailContainer extends Component {
   componentDidMount() {
@@ -16,8 +16,9 @@ export class EventDetailContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { event: state.events, tickets: state.tickets };
+const mapStateToProps = (state) => {
+  console.log('state', state.event.event);
+  return { event: state.event, tickets: state.tickets };
 };
 
 const mapDispatchToProps = { readEvent };

@@ -5,7 +5,6 @@ export const CREATE_EVENT = 'CREATE_EVENT';
 export const READ_EVENTS_STARTED = 'READ_EVENTS_STARTED';
 export const READ_EVENTS_SUCCESS = 'READ_EVENTS_SUCCESS';
 export const READ_EVENTS_FAILURE = 'READ_EVENTS_FAILURE';
-export const READ_EVENT = 'READ_EVENT';
 
 function createEventSuccess(event) {
   return {
@@ -69,19 +68,4 @@ export const readEvents = () => (dispatch, getState) => {
     .catch((err) => {
       dispatch(readEventsFailure(err));
     });
-};
-
-export const readEventSuccess = (event) => ({
-  type: READ_EVENT,
-  payload: event,
-});
-
-export const readEvent = (id, event) => (dispatch, _getState) => {
-  request
-    .get(`${baseUrl}/event/${id}`)
-    .send(event)
-    .then((response) => {
-      dispatch(readEventSuccess(response.body));
-    })
-    .catch(console.error);
 };
