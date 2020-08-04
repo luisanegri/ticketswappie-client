@@ -480,6 +480,13 @@ body {
   margin: 20px auto 5px;
 }
 
+.before {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 50%;
+}
+
 @media (max-width: 768px) {
   #event-list .card {
     margin: 0 auto;

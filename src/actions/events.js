@@ -41,7 +41,6 @@ const readEventsStarted = () => ({
 });
 
 const readEventsSuccess = (events) => {
-  console.log('events on action readSuccess', events);
   return {
     type: READ_EVENTS_SUCCESS,
     payload: events,
@@ -57,13 +56,11 @@ const readEventsFailure = (error) => ({
 
 export const readEvents = () => (dispatch, getState) => {
   dispatch(readEventsStarted());
-  console.log('get', getState());
 
   request
     .get(`${baseUrl}/event`)
     .then((response) => {
       dispatch(readEventsSuccess(response.body));
-      console.log('action', readEventsSuccess(response.body));
     })
     .catch((err) => {
       dispatch(readEventsFailure(err));
