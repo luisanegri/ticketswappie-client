@@ -3,11 +3,11 @@ import { Row, Col, Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function EventList({ events, loading, error }) {
-  const empty = !events.length;
+  // const empty = !events.length;
 
-  if (empty) {
-    return <p className="before">No events</p>;
-  }
+  // if (empty) {
+  //   return <p className="before">No events</p>;
+  // }
 
   if (loading) {
     return <div className="before">Loading...</div>;
