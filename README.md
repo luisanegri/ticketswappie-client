@@ -19,7 +19,6 @@ Demo: https://ticketswappie.netlify.app/
 ## TODO
 
 * Conditional Login/Logout buttons on navigation
-* Loading message when fetching events
 * Back links
 * CSS: landing page white space, responsiveness  
 * Message success/error on post request (post new ticket to sell, post new event)
