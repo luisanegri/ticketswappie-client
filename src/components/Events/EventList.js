@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function EventList({ events, loading, error }) {
   const empty = !events.length;
+
   if (empty) {
     return <p className="before">No events</p>;
   }
@@ -14,6 +15,7 @@ export default function EventList({ events, loading, error }) {
   if (error) {
     return <div className="before">ERROR: {error}</div>;
   }
+
   return (
     <Container>
       <div className="wrapper event-list" id="event-list">
