@@ -1,23 +1,19 @@
 import React from 'react';
 import '../App.css';
-import Img from '../confettu.jpg';
+import Img from '../landing.svg';
 import { Container, Row, Button, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
     <div className="home-wrapper h-100">
-      <Container
-        fluid
-        className="h-100"
-        style={{ position: 'absolute', top: 0 }}
-      >
+      <Container fluid className="h-100">
         <Row className="h-100">
           <Col
             md={6}
             className="col-right"
             style={{
-              backgroundColor: '#5215fc',
+              // backgroundColor: '#5215fc',
               position: 'relative',
               display: 'flex',
               justifyContent: 'center',
@@ -25,9 +21,20 @@ export default function Home() {
             }}
           >
             <div className="row-home-btn">
-              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
+              <h5>Make your event and sell tickets</h5>
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque corrupti
+              </p>
               <Link to="/signup">
-                <Button id="btn-red" className="home-btn">
+                <Button
+                  className="home-btn"
+                  style={{
+                    background: 'white',
+                    border: ' 1px solid #4ee0af',
+                    color: '#4ee0af',
+                  }}
+                >
                   Create Event
                 </Button>
               </Link>
@@ -42,13 +49,15 @@ export default function Home() {
           <Col
             md={6}
             className="col-right"
-            style={{
-              backgroundColor: '#885fff',
-              position: 'relative',
-              backgroundImage: `url(${Img})`,
-              backgroundSize: 'cover',
-            }}
-          ></Col>
+            // style={{
+            //   backgroundColor: '#885fff',
+            //   position: 'relative',
+            //   backgroundImage: `url(${Img})`,
+            //   backgroundSize: 'cover',
+            // }}
+          >
+            <img src={Img} className="landing-image" />
+          </Col>
         </Row>
       </Container>
     </div>

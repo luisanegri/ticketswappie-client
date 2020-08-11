@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import NavBar from './components/NavBar';
+import Navigation from './components/Navigation';
 import EventFormContainer from './components/Events/EventFormContainer';
 import EventListContainer from './components/Events/EventListContainer';
 import EventDetailContainer from './components/Events/EventDetailContainer';
@@ -16,7 +16,7 @@ import Home from './components/Home';
 function App() {
   return (
     <Fragment>
-      <NavBar />
+      <Navigation />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={SignUp} />

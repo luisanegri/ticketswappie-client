@@ -48,16 +48,16 @@ body {
 }
 
 .navigation .bg {
-  background-color: #5215fc;
+  background-color: white;
 }
 
 .navigation .navbar-brand {
   font-family: 'Coiny', cursive !important;
-  color: #fafafa !important;
+  color: #5216fc !important;
 }
 
 .navigation .nav-link a {
-  color: #fafafa;
+  color: #5216fc;
 }
 
 .navigation .nav-link a:hover {
@@ -313,10 +313,10 @@ body {
 }
 
 .row-home-btn h5 {
-  color: white;
-  font-family: 'Roboto';
-  margin-bottom: 35px;
-  font-size: 20px;
+  color: #555287;
+  margin-bottom: 20px;
+  font-size: 27px;
+  font-weight: 500;
 }
 
 /* event list */
@@ -501,6 +501,13 @@ body {
   background: transparent;
   border: none;
   padding: 0;
+}
+
+.landing-image {
+  width: 500px;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
 @media (max-width: 768px) {
