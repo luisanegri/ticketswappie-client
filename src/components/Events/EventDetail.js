@@ -3,7 +3,6 @@ import { Col, Row, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function EventDetail({ event }) {
-  console.log('props', event);
   return (
     <React.Fragment>
       <Container
@@ -29,7 +28,15 @@ export default function EventDetail({ event }) {
           </Col>
         </Row>
         <Row className="row-w row-badge-bottom">
-          <Col md={8} className="col-left"></Col>
+          <Col md={8} className="col-left">
+            <Link
+              to="/event"
+              id="back-link"
+              style={{ bottom: '0px', position: 'absolute' }}
+            >
+              back to events
+            </Link>
+          </Col>
           <Col md={2}>
             <Button id="btn-red">
               <Link to={`/event/${event.id}/ticket/create`}>Sell ticket</Link>

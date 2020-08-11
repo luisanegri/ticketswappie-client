@@ -487,6 +487,22 @@ body {
   right: 50%;
 }
 
+#back-link-btn {
+  margin-top: 20px;
+  background: transparent;
+  color: #5216fc;
+  border-color: #5216fc;
+}
+
+#back-link {
+  color: #5216fc;
+  text-decoration: underline;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
 @media (max-width: 768px) {
   #event-list .card {
     margin: 0 auto;

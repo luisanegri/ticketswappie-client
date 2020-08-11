@@ -1,16 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Button, Row, Table, Container } from 'react-bootstrap';
 import '../../App.css';
 
-export default function TicketList(props) {
-  const empty = !props.tickets.length;
+const TicketList = ({ tickets, history }) => {
+  const empty = !tickets.length;
   if (empty) {
     return <p className="info-message">No tickets available</p>;
   }
   return (
     <Container>
       <div className="ticket-list">
+        <Button id="back-link" onClick={() => history.goBack()}>
+          back to event
+        </Button>
         <h1 style={{ textAlign: 'center' }}>Tickets available</h1>
         <Row>
           <Table responsive>
@@ -24,7 +27,7 @@ export default function TicketList(props) {
                 </th>
               </tr>
             </thead>
-            {props.tickets.map((ticket) => (
+            {tickets.map((ticket) => (
               <tbody>
                 <tr>
                   <td>€ {ticket.price}</td>
@@ -43,4 +46,6 @@ export default function TicketList(props) {
       </div>
     </Container>
   );
-}
+};
+
+export default withRouter(TicketList);
