@@ -1,17 +1,32 @@
 import request from 'superagent';
 import { baseUrl } from './urls';
 
-export const CREATE_EVENT = 'CREATE_EVENT';
+export const CREATE_EVENT_STARTED = 'CREATE_EVENT_STARTED';
+export const CREATE_EVENT_SUCCESS = 'CREATE_EVENT_SUCCESS';
+export const CREATE_EVENT_FAILURE = 'CREATE_EVENT_FAILURE';
+
 export const READ_EVENTS_STARTED = 'READ_EVENTS_STARTED';
 export const READ_EVENTS_SUCCESS = 'READ_EVENTS_SUCCESS';
 export const READ_EVENTS_FAILURE = 'READ_EVENTS_FAILURE';
 
+const createEventStarted = () => ({
+  type: CREATE_EVENT_STARTED,
+});
+
 function createEventSuccess(event) {
   return {
-    type: CREATE_EVENT,
+    type: CREATE_EVENT_SUCCESS,
     payload: event,
   };
 }
+
+const createEventFailure = (errorOnCreate) => {
+  console.log('error action', errorOnCreate);
+  return {
+    type: CREATE_EVENT_FAILURE,
+    payload: errorOnCreate,
+  };
+};
 
 export const createEvent = (
   name,
@@ -21,6 +36,8 @@ export const createEvent = (
   location,
   price
 ) => (dispatch, getState) => {
+  dispatch(createEventStarted());
+
   const state = getState();
   const jwt = state.users.jwt;
   const userId = state.users.id;
@@ -30,10 +47,11 @@ export const createEvent = (
     .set('Authorization', `Bearer ${jwt}`)
     .send({ name, description, image, start_date, location, price, userId })
     .then((response) => {
-      const action = createEventSuccess(response.body);
-      dispatch(action);
+      dispatch(createEventSuccess(response.body));
     })
-    .catch(console.error);
+    .catch((err) => {
+      dispatch(createEventFailure(err));
+    });
 };
 
 const readEventsStarted = () => ({
@@ -47,14 +65,12 @@ const readEventsSuccess = (events) => {
   };
 };
 
-console.log('read', readEventsSuccess());
-
 const readEventsFailure = (error) => ({
   type: READ_EVENTS_FAILURE,
   payload: error,
 });
 
-export const readEvents = () => (dispatch, getState) => {
+export const readEvents = () => (dispatch, _getState) => {
   dispatch(readEventsStarted());
 
   request

@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
-import { Form, Button, Col, Container } from 'react-bootstrap';
+import { Form, Button, Col, Container, Alert } from 'react-bootstrap';
 
 export default function EventForm(props) {
+  console.log('props error', props.error);
+  const [show, setShow] = useState(true);
+
+  if (props.success) {
+    return (
+      <Alert
+        show={show}
+        variant="success"
+        onClose={() => setShow(false)}
+        dismissable
+      >
+        <p>Successfully created an event!</p>
+        <div></div>
+      </Alert>
+    );
+  }
+  if (props.error) {
+    return (
+      <Alert
+        show={show}
+        variant="success"
+        onClose={() => setShow(false)}
+        dismissable
+      >
+        <p>Successfully created an event!</p>
+        <div></div>
+      </Alert>
+    );
+  }
+
   return (
     <Container>
       <div className="event-form">

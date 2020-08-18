@@ -48,6 +48,8 @@ export class EventFormContainer extends Component {
           onSubmit={this.onSubmit}
           value={this.state}
           user={this.state.user}
+          success={this.props.success}
+          error={this.props.error}
         />
       </div>
     );
@@ -55,7 +57,12 @@ export class EventFormContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { user: state.users };
+  console.log('state', state);
+  return {
+    user: state.users,
+    success: state.events.success,
+    error: state.events.errorOnCreate,
+  };
 };
 const mapDispatchToProps = { createEvent };
 
