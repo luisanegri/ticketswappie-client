@@ -2,6 +2,7 @@ import request from 'superagent';
 import { baseUrl } from './urls';
 
 export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
 
 function loginSuccess(user) {
   return {
@@ -19,3 +20,7 @@ export const login = (email, password) => (dispatch) => {
     })
     .catch(console.error);
 };
+
+export const logout = () => ({
+  type: LOGOUT,
+});

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { logout } from '../actions/login';
 
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
@@ -26,7 +27,7 @@ const Navigation = ({ user }) => {
                   <Link to="/event/create">Create Event</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to="">Sign Out</Link>
+                  <button onClick={() => logout()}>Sign Out</button>
                 </Nav.Link>
               </React.Fragment>
             ) : (
@@ -45,4 +46,6 @@ const mapStateToProps = (state) => ({
   user: state.users,
 });
 
-export default connect(mapStateToProps)(Navigation);
+const mapDispatchToProps = { logout };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
