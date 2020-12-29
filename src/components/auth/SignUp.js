@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup } from '../actions/signup';
-import { Button, Form, Container } from 'react-bootstrap/';
+import { signup } from '../../actions/signup';
+import { Button, Form, Row, Container } from 'react-bootstrap/';
 import { Link } from 'react-router-dom';
 
 class SignUp extends React.Component {

@@ -47,8 +47,6 @@ const readEventsSuccess = (events) => {
   };
 };
 
-console.log('read', readEventsSuccess());
-
 const readEventsFailure = (error) => ({
   type: READ_EVENTS_FAILURE,
   payload: error,

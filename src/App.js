@@ -1,16 +1,15 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import { Container } from 'react-bootstrap';
 import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Navigation from './components/Navigation';
-import EventFormContainer from './components/Events/EventFormContainer';
-import EventListContainer from './components/Events/EventListContainer';
-import EventDetailContainer from './components/Events/EventDetailContainer';
-import TicketListContainer from './components/Tickets/TicketListContainer';
-import TicketFormContainer from './components/Tickets/TicketFormContainer';
-import TicketDetailContainer from './components/Tickets/TicketDetailContainer';
+import EventFormContainer from './components/events/EventFormContainer';
+import EventListContainer from './components/events/EventListContainer';
+import EventDetailContainer from './components/events/EventDetailContainer';
+import TicketListContainer from './components/tickets/TicketListContainer';
+import TicketFormContainer from './components/tickets/TicketFormContainer';
+import TicketDetailContainer from './components/tickets/TicketDetailContainer';
 import Home from './components/Home';
 
 function App() {

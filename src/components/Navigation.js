@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
@@ -30,10 +30,10 @@ const Navigation = ({ user }) => {
                 </Nav.Link>
               </React.Fragment>
             ) : (
-              <Nav.Link>
-                <Link to="/signup">Sign up</Link>
-              </Nav.Link>
-            )}
+                <Nav.Link>
+                  <Link to="/signup">Sign up</Link>
+                </Nav.Link>
+              )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

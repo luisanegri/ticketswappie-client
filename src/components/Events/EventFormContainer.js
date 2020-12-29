@@ -31,7 +31,6 @@ export class EventFormContainer extends Component {
       location: '',
       price: '',
     });
-    // this.props.history.push('/event');
   };
 
   onChange = (event) => {

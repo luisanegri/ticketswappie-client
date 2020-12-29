@@ -49,14 +49,8 @@ export default function Home() {
           <Col
             md={6}
             className="col-right"
-            // style={{
-            //   backgroundColor: '#885fff',
-            //   position: 'relative',
-            //   backgroundImage: `url(${Img})`,
-            //   backgroundSize: 'cover',
-            // }}
           >
-            <img src={Img} className="landing-image" />
+            <img src={Img} className="landing-image" alt="Landing Illustration" />
           </Col>
         </Row>
       </Container>

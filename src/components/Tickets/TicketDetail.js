@@ -11,13 +11,10 @@ const TicketDetail = ({ ticket, history }) => {
       <div className="ticketCard">
         <Row>
           <Col>
-            <img src={ticket.image} width="300" height="363" />
+            <img src={ticket.image} width="300" height="363" alt="ticket" />
           </Col>
           <Col className="col-right">
             <div className="hold-info">
-              {/* <h4 className="info" style={{ textTransform: 'capitalize' }}>
-                {props.event.name}
-              </h4> */}
               <p className="info">Seller: {ticket.username}</p>
               <p className="info">Price: €{ticket.price}</p>
               <p className="info">Description: {ticket.description}</p>

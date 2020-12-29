@@ -1,0 +1,75 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { login } from '../../actions/login';
+import { Button, Form, Container } from 'react-bootstrap';
+
+class Login extends React.Component {
+  state = { email: '', password: '' };
+
+  onChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.login(this.state.email, this.state.password);
+    this.setState({ email: '', password: '' });
+    this.props.history.push('/event');
+  };
+
+  componentDidUpdate() {
+    const { user } = this.props;
+
+    if (user) {
+      this.props.history.push('/event');
+    }
+  }
+
+  render() {
+    return (
+      <Container>
+        <div className=" signup-wrapper">
+          <Form onSubmit={this.onSubmit}>
+            <h1 style={{ textAlign: 'center' }}>Login</h1>
+            <Form.Row>
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                onChange={this.onChange}
+                value={this.state.email}
+                name="email"
+                placeholder="email"
+              />
+
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                onChange={this.onChange}
+                value={this.state.password}
+                name="password"
+                placeholder="password"
+                type="password"
+              />
+
+              <Button
+                type="submit"
+                id="btn-green"
+                className="btn-form btn-access"
+              >
+                Login
+              </Button>
+            </Form.Row>
+          </Form>
+        </div>
+      </Container>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = { login };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -14,7 +14,6 @@ export class EventListContainer extends Component {
         <EventList
           events={this.props.events}
           loading={this.props.loading}
-          events={this.props.events}
           error={this.props.error}
           tickets={this.props.tickets}
         />

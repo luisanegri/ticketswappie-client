@@ -17,7 +17,6 @@ export class EventDetailContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state.event.event);
   return { event: state.event, tickets: state.tickets };
 };
 

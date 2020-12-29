@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TicketDetail from './TicketDetail';
-import CommentForm from '../Comments/CommentForm';
+import CommentForm from '../comments/CommentForm';
 import { readTicket } from '../../actions/tickets';
 import { createComment, readComments } from '../../actions/comments';
 import { Container } from 'react-bootstrap';
@@ -42,13 +42,6 @@ export class TicketDetailContainer extends Component {
             comments={this.props.comments}
             event={this.props.event}
           />
-          {/* {this.props.user.id === this.props.ticket.userId && (
-            <EditTicketContainer
-              ticket={this.props.ticket}
-              ticketId={this.props.match.params.ticketId}
-            />
-          )} */}
-
           <CommentForm
             onChange={this.onChange}
             onSubmit={this.onSubmit}
