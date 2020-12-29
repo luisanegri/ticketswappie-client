@@ -1,5 +1,5 @@
 # Rocketevents
-Demo: https://ticketswappie.netlify.app/\
+Demo: https://ticketswappie.netlify.app/
 >You can login with:\
 email: test@test.com | password: 123
 
