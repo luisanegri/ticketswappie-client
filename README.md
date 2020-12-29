@@ -5,10 +5,14 @@ Demo: https://ticketswappie.netlify.app/
 
 >TicketSwappie is a full stack web application that allows individuals to create events and sell tickets. 
 
-The backend repo can be found [here](https://github.com/luisanegri/ticketswappie-server)
+>The backend repo can be found [here](https://github.com/luisanegri/ticketswappie-server)
+
+>You can login with:
+email: test@test.com
+password: 123
+
 
 This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
-
 Email: <luisaanegri@gmail.com>
 LinkedIn: https://www.linkedin.com/in/luisanegri/
 
