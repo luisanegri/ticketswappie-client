@@ -3,18 +3,25 @@ Demo: https://ticketswappie.netlify.app/
 
 ## Overview
 
->TicketSwappie is a full stack app that allows individuals to create events and sell tickets. The backend repo can be found [here](https://github.com/luisanegri/ticketswappie-server)
+>TicketSwappie is a full stack web application that allows individuals to create events and sell tickets. 
+
+The backend repo can be found [here](https://github.com/luisanegri/ticketswappie-server)
+
+This project is part of my personal portfolio, so, I'll be happy if you could provide me any feedback about the project, code, structure or anything that you can report that could make me a better developer!
+
+Email: (mailto:luisaanegri@gmail.com)
+LinkedIn: (https://www.linkedin.com/in/luisanegri/)
 
 ## Features
 
 * User Authentication
-* User Authorisation
-* Create a new event
-* View events list
-* View information - including list of tickets being sold - of each event
-* Sell ticket of an event
-* Post comments on the ticket details page
-* Check the risk of buying a ticket from a specific user
+* User Authorisation: user is only able to create events and sell tickets if logged in.
+* Create a new event and include information such as: Event name, description, price, location, image and date.
+* View the list of events
+* View detailed information - including list of tickets being sold - of each event
+* Sell ticket of a specific event and include information such as: Event name, ticket price, and image.
+* View a list of tickets being sold for a specific event.
+* View information about a specific ticket being sold, check the seller's name and make comments.
 
 ## TODO
 
